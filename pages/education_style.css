@@ -1,0 +1,60 @@
+/* Simple page-specific styles for education.html (glass/tile theme) */
+:root{
+  --bg:#ffffff;
+  --card:#ffffffcc; /* fallback card color */
+  --accent:#0b6cf3;
+  --text:#111827;
+  --muted:#6b7280;
+  --glass-bg: rgba(255,255,255,0.55);
+  --glass-border: rgba(255,255,255,0.6);
+  --chip-bg: rgba(11,108,243,0.08);
+}
+body{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#ffffff 0%,#fbfdff 100%);
+  margin:0;
+}
+.container{
+  max-width:900px;
+  margin:40px auto;
+  padding:20px;
+}
+.page-header{
+  /* Override global `header` rules so this page header doesn't become a full-width blue bar */
+  background: transparent !important;
+  padding: 0 0 8px 0;
+  margin: 0 0 12px 0;
+}
+.page-header h1{
+  margin:0 0 6px 0;
+  font-size: 2.2rem;
+  color: var(--text);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+}
+.page-header .lead{color:var(--muted);margin-top:6px}
+.lead{color:var(--muted);margin-top:0}
+.card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.72), rgba(255,255,255,0.58));
+  border: 1px solid var(--glass-border);
+  border-radius:12px;
+  padding:18px;
+  margin:18px 0;
+  box-shadow: 0 8px 20px rgba(15,23,42,0.06), inset 0 1px 0 rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  background-clip: padding-box;
+  overflow: hidden;
+}
+.list{padding-left:1rem;margin:8px 0}
+.muted{color:var(--muted);font-size:0.95rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;list-style:none;padding:0;margin:10px 0}
+.grid li{background: rgba(255,255,255,0.45); padding:8px 10px; border-radius:8px; border: 1px solid rgba(0,0,0,0.04)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:10px 0}
+.chips li{background:var(--chip-bg);color:var(--accent);padding:6px 10px;border-radius:999px;font-weight:600}
+.page-footer{margin-top:24px;font-size:0.9rem;color:var(--muted)}
+
+@media (max-width:520px){
+  .container{padding:12px;margin:20px}
+}
