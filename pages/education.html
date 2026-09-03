@@ -1,70 +1,188 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Education — Abu K.</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="education_style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education & Coursework | Abu Kaisar Md Faisal</title>
+  <meta name="description" content="Academic qualifications, thesis research, relevant coursework, and honors of Abu Kaisar Md Faisal (RUET Mechanical Engineering)." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css" />
 </head>
+
 <body>
-  <main class="container">
-    <header class="page-header">
-      <h1>Education</h1>
-      <p class="lead">A concise summary of academic background, coursework, and achievements.</p>
-    </header>
 
-    <section class="card">
-      <h2>Degrees</h2>
-      <ul class="list">
-        <li>
-          <strong>B.Sc. in Mechanical Engineering</strong>, Rajshahi University of Engineering & Technology — 2025
-          <div class="muted">CGPA: 3.83/4.00</div>
-          <div class="muted">Thesis: Stall-Adaptive Aerofoil:  Numerical and Experimental Optimization of Dimpled and Leading-Edge Protuberance Surfaces</div>
-        </li>
-        <li>
-          <strong>H.S.C. in Science</strong>, Ispahani Public School & College — 2019
-          <div class="muted">GPA: 5.00/5.00</div>
-        </li>
-        <li>
-          <strong>S.S.C. in Science</strong>, Ispahani Public School & College — 2017
-          <div class="muted">GPA: 5.00/5.00</div>
-        </li>
-      </ul>
-    </section>
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-wrapper">
+        <div class="brand-monogram">AK</div>
+        <div class="brand-text">
+          <span class="brand-name">Abu Kaisar Md Faisal</span>
+          <span class="brand-tagline">Lecturer & Aerodynamics Researcher</span>
+        </div>
+      </a>
 
-    <section class="card">
-      <h2>Relevant Coursework</h2>
-      <p class="muted">Selected classes demonstrating core skills</p>
-      <ul class="grid">
-        <li>Aerodynamics</li>
-        <li>Fluid Mechanics</li>
-        <li>Turbomachinery</li>
-        <li>Thermodynamics</li>
-        <li>Machine Design</li>
-        <li>Metallurgy</li>
-      </ul>
-    </section>
+      <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
 
-    <section class="card">
-      <h2>Skills</h2>
-      <p class="muted">Tools and technologies</p>
-      <ul class="chips">
-        <li>HTML • CSS • JavaScript</li>
-        <li>Python • MATLAB</li>
-        <li>ANSYS Fluent • OpenFOAM</li>
-        <li>SolidWorks • AutoCAD</li>
-        <li>Github • LaTeX</li>
-      </ul>
-    </section>
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home / Research</a></li>
+          <li><a href="publications.html" class="nav-link">Publications</a></li>
+          <li><a href="education.html" class="nav-link active">Education</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="others.html" class="nav-link">Others</a></li>
+          <li><a href="../CV.pdf" class="nav-btn-cv" download>📄 Download CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <section class="card">
-      <h2>Awards & Activities</h2>
-      <ul class="list">
-        <li>Merit Scholarship List — 2021, 2022, 2023</li>
-        <li>Research assistant, Advanced Fluid Flow Research Group (AFFRG) — 2023–Present</li>
-      </ul>
-    </section>
+  <!-- Main Content Layout -->
+  <main class="layout-container layout-single-column" style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
+    <div class="main-content-flow">
+
+      <!-- Page Banner -->
+      <section class="content-section" style="background: linear-gradient(135deg, #002842 0%, #045185 100%); color: white; border: none;">
+        <h1 style="color: white; font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 0.5rem;">🎓 Academic Education</h1>
+        <p style="color: #bae6fd; font-size: 1.05rem; margin-bottom: 0;">
+          Formal degrees, undergraduate thesis research, engineering coursework, and merit honors from Rajshahi University of Engineering & Technology (RUET).
+        </p>
+      </section>
+
+      <!-- Degrees -->
+      <section class="content-section">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🏛️ Degrees & Academic Qualifications</h2>
+        </div>
+
+        <!-- B.Sc. -->
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Bachelor of Science (B.Sc.) in Mechanical Engineering</div>
+              <div class="edu-exp-institution">Rajshahi University of Engineering & Technology (RUET), Rajshahi, Bangladesh</div>
+            </div>
+            <span class="edu-exp-date">Jan 2020 – July 2025</span>
+          </div>
+          <div class="edu-exp-body">
+            <p>
+              <strong>Academic Standing:</strong> Cumulative GPA: <strong>3.83 / 4.00</strong>
+            </p>
+            <p>
+              <strong>Undergraduate Thesis:</strong> <em>"Stall-Adaptive Aerofoil: Numerical and Experimental Optimization of Dimpled and Leading-Edge Protuberance Surfaces"</em>
+            </p>
+            <div style="background: var(--bg-card-alt); border-radius: var(--radius-sm); padding: 1rem; border: 1px solid var(--border-light); margin: 0.75rem 0;">
+              <p style="font-weight: 600; color: var(--primary); margin-bottom: 0.4rem;">
+                🔬 Computational Flow Physics & Experimental Aerodynamics (CFPEA) Lab, RUET
+              </p>
+              <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.4rem;">
+                PI: Dr. Mahadi Hasan Masud | Undergraduate Researcher (June 2023 – Present)
+              </p>
+              <ul style="padding-left: 1.2rem; font-size: 0.92rem;">
+                <li>Researched and developed nature-inspired biomimetic designs for drag reduction and passive flow control.</li>
+                <li>Conducted high-fidelity numerical simulations, multi-objective optimization, and experimental wind tunnel validation.</li>
+                <li>Developed laboratory capabilities and managed advanced High-Performance Computing (HPC) clusters for complex fluid flow simulations.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pre-University -->
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Higher Secondary Certificate (H.S.C.) — Science</div>
+              <div class="edu-exp-institution">Ispahani Public School & College, Cumilla</div>
+            </div>
+            <span class="edu-exp-date">2017 – 2019</span>
+          </div>
+          <div class="edu-exp-body">
+            <p><strong>Result:</strong> GPA: <strong>5.00 / 5.00</strong> (Golden A+) | College Prefect (2018), Excellent Discipline Academic Award (2018)</p>
+          </div>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Secondary School Certificate (S.S.C.) — Science</div>
+              <div class="edu-exp-institution">Ispahani Public School & College, Cumilla</div>
+            </div>
+            <span class="edu-exp-date">2015 – 2017</span>
+          </div>
+          <div class="edu-exp-body">
+            <p><strong>Result:</strong> GPA: <strong>5.00 / 5.00</strong> (Golden A+) | Education Board Scholarship (2017)</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Relevant Coursework -->
+      <section class="content-section">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">📖 Relevant Coursework</h2>
+        </div>
+        <p>Selected undergraduate coursework demonstrating core mechanical and aerodynamic competencies:</p>
+        <ul class="coursework-grid">
+          <li class="coursework-pill">Aerodynamics</li>
+          <li class="coursework-pill">Fluid Mechanics</li>
+          <li class="coursework-pill">Engineering Mechanics</li>
+          <li class="coursework-pill">Applied Engineering Mathematics</li>
+          <li class="coursework-pill">Design of Machine Elements</li>
+          <li class="coursework-pill">Machine Tools Design</li>
+          <li class="coursework-pill">Solid Mechanics</li>
+          <li class="coursework-pill">Computer Aided Design (CAD)</li>
+          <li class="coursework-pill">Heat Transfer</li>
+        </ul>
+      </section>
+
+      <!-- Academic Honors & Scholarships -->
+      <section class="content-section">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🏆 Scholarships & Academic Honors</h2>
+        </div>
+        <div class="edu-exp-body">
+          <ul>
+            <li><strong>1st Place — Best Research Publication Award (2025):</strong> Faculty of Mechanical Engineering, RUET.</li>
+            <li><strong>1st Place — Best Research Publication Award (2025):</strong> Department of Mechanical Engineering, RUET.</li>
+            <li><strong>Merit-based Scholarships (2021–2023):</strong> Rajshahi University of Engineering & Technology (awarded for academic excellence).</li>
+            <li><strong>Technical Scholarship (2020):</strong> Rajshahi University of Engineering & Technology (RUET).</li>
+            <li><strong>College Prefect & Excellent Discipline Academic Award (2018):</strong> Ispahani Public School & College.</li>
+            <li><strong>Education Board Scholarship (2017):</strong> Awarded for outstanding performance in the national Secondary School Certificate examinations.</li>
+            <li><strong>National High School Programming Competition (NHSPC):</strong> 1st Place (Regional, 2017) & 2nd Place (Regional, 2016).</li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
   </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-text">
+        <p><strong>Abu Kaisar Md Faisal</strong> — Mechanical Engineer, Lecturer & Aerodynamics Researcher</p>
+        <p>&copy; 2026 Abu Kaisar Md Faisal. Hosted on GitHub Pages.</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+      <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+        ↑ Top
+      </button>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
+
 </html>
