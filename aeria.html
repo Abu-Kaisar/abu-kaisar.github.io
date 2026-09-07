@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AERIA — Arquitectura Ligera</title>
+  <meta name="description" content="Santuarios privados suspendidos entre paisaje, arquitectura y silencio." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,400&display=swap" />
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow-x: hidden;
+      font-family: 'Instrument Sans', sans-serif;
+      color: #102f44;
+      background-color: #def3fa;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :focus-visible {
+      outline: 2px solid #102f44;
+      outline-offset: 3px;
+    }
+
+    /* Hero Container: min-height 100svh */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Video Background Full-bleed */
+    .hero-video-media {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Localized Edge Gradient Fade behind text - No global overlays, no blobs, no glows */
+    .hero-edge {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(180deg, rgba(222, 243, 250, .94) 0%, rgba(222, 243, 250, .54) 27%, transparent 53%);
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    /* Top Header & Navigation */
+    .hero-header {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 48px;
+      width: 100%;
+    }
+
+    .section-brand {
+      font-family: 'Instrument Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1.15rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #102f44;
+      text-decoration: none;
+    }
+
+    .section-nav {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .section-nav a {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #102f44;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+      opacity: 0.85;
+    }
+
+    .section-nav a:hover {
+      opacity: 1;
+    }
+
+    /* Main Centered Content: Centered at top 110px, max-width 900px */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 110px 24px 0;
+    }
+
+    /* Title clamp(58px, 7vw, 116px), weight 520, line-height .91 */
+    .section-title {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: clamp(58px, 7vw, 116px);
+      font-weight: 520;
+      line-height: 0.91;
+      letter-spacing: 0;
+      color: #102f44;
+      margin-bottom: 24px;
+    }
+
+    .section-title span {
+      display: block;
+    }
+
+    .section-title em {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      display: block;
+    }
+
+    /* Body copy: max-width 460px */
+    .section-copy {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: #102f44;
+      max-width: 460px;
+      margin: 0 auto 32px;
+      opacity: 0.9;
+    }
+
+    /* CTA Button: fine lines, max radius 6px, accent #102f44 */
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 28px;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      color: #def3fa;
+      background-color: #102f44;
+      border: 1px solid #102f44;
+      border-radius: 6px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    }
+
+    .hero-cta:hover {
+      background-color: #0b2231;
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* Bottom Footer: Altitud 2.400 M / Arquitectura Ligera */
+    .hero-footer {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 32px 48px;
+      width: 100%;
+    }
+
+    .hero-footer-item {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #102f44;
+      opacity: 0.75;
+    }
+
+    /* Entry Animations: opacity + translateY(18px), .75s, short stagger */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: heroReveal 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .reveal-title {
+      animation-delay: 0.1s;
+    }
+
+    .reveal-copy {
+      animation-delay: 0.25s;
+    }
+
+    .reveal-cta {
+      animation-delay: 0.4s;
+    }
+
+    .reveal-footer {
+      animation-delay: 0.55s;
+    }
+
+    @keyframes heroReveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Mobile Responsive: <= 760px */
+    @media (max-width: 760px) {
+      .section-nav {
+        display: none;
+      }
+
+      .hero-header {
+        padding: 24px 22px;
+      }
+
+      /* In mobile: text placed 22px from sides and 90px from bottom edge */
+      .hero {
+        justify-content: flex-end;
+      }
+
+      .hero-content {
+        padding: 0 22px 90px;
+        margin: 0;
+        width: 100%;
+        max-width: 100%;
+      }
+
+      .section-title {
+        font-size: clamp(46px, 14vw, 68px);
+        line-height: 0.94;
+        margin-bottom: 18px;
+      }
+
+      .section-copy {
+        font-size: 0.98rem;
+        margin-bottom: 24px;
+        max-width: 100%;
+      }
+
+      /* Localized fade in mobile turns vertical from bottom */
+      .hero-edge {
+        background: linear-gradient(0deg, rgba(222, 243, 250, .94) 0%, rgba(222, 243, 250, .54) 27%, transparent 53%);
+      }
+
+      .hero-footer {
+        padding: 18px 22px 24px;
+      }
+    }
+
+    /* Accessibility: prefers-reduced-motion */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+      }
+
+      .hero-video-media {
+        display: none;
+      }
+
+      .hero {
+        background: url('media/cloud-meadow-station-seamless-16x9.png') no-repeat center center / cover;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section class="hero" id="heroSection">
+    <!-- Localized Edge Gradient -->
+    <div class="hero-edge" aria-hidden="true"></div>
+
+    <!-- Full-bleed Native Background Video -->
+    <video class="hero-video-media" id="heroVideo" autoplay muted loop playsinline preload="metadata" poster="media/cloud-meadow-station-seamless-16x9.png">
+      <source src="media/cloud-meadow-station-seamless-16x9-loop.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Header / Nav -->
+    <header class="hero-header">
+      <a href="#" class="section-brand">Aeria</a>
+      <nav aria-label="Navegación principal">
+        <ul class="section-nav">
+          <li><a href="#proyecto">Proyecto</a></li>
+          <li><a href="#sistema">Sistema</a></li>
+          <li><a href="#acerca">Acerca de</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Central Hero Composition -->
+    <div class="hero-content">
+      <h1 class="section-title reveal reveal-title">
+        <span>Hay ideas que necesitan</span>
+        <em>otro horizonte.</em>
+      </h1>
+
+      <p class="section-copy reveal reveal-copy">
+        Santuarios privados suspendidos entre paisaje, arquitectura y silencio.
+      </p>
+
+      <div class="reveal reveal-cta">
+        <a href="#explorar" class="hero-cta">Explorar Aeria</a>
+      </div>
+    </div>
+
+    <!-- Bottom Metadata -->
+    <footer class="hero-footer reveal reveal-footer">
+      <span class="hero-footer-item">Altitud 2.400 M</span>
+      <span class="hero-footer-item">Arquitectura Ligera</span>
+    </footer>
+  </section>
+
+  <!-- Video Performance Optimization: Pause video when out of viewport -->
+  <script>
+    (function () {
+      const video = document.getElementById('heroVideo');
+      if (!video) return;
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              video.play().catch(() => {});
+            } else {
+              video.pause();
+            }
+          });
+        }, { threshold: 0.1 });
+
+        observer.observe(video);
+      }
+    })();
+  </script>
+</body>
+
+</html>

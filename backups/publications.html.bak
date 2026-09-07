@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications | Abu Kaisar Md Faisal</title>
+  <meta name="description" content="Peer-reviewed journal articles, book chapters, and conference papers by Abu Kaisar Md Faisal in CFD, biomimetic aerodynamics, and sustainable energy." />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="../style.css?v=20260908_toolbar" />
+  <style>
+    /* =========================================================================
+       Direct Publications Toolbar Styling (Zero-Cache Immediate Render)
+       ========================================================================= */
+    .pub-toolbar {
+      background: var(--bg-surface, rgba(11, 17, 26, 0.88)) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid var(--border-card, rgba(255, 255, 255, 0.15)) !important;
+      border-radius: 12px !important;
+      padding: 1.35rem 1.6rem !important;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .pub-search-wrapper {
+      position: relative !important;
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .pub-search-icon {
+      position: absolute !important;
+      left: 1.1rem !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      color: #94a3b8 !important;
+      pointer-events: none !important;
+      stroke: #94a3b8 !important;
+      width: 18px !important;
+      height: 18px !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .pub-search-input {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 0.72rem 1.1rem 0.72rem 2.85rem !important;
+      font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+      font-size: 0.92rem !important;
+      color: #ffffff !important;
+      background: rgba(15, 23, 42, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 8px !important;
+      outline: none !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .pub-search-input::placeholder {
+      color: #94a3b8 !important;
+      opacity: 0.8 !important;
+    }
+
+    .pub-search-input:focus {
+      border-color: #38bdf8 !important;
+      background: rgba(15, 23, 42, 0.98) !important;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25), 0 0 16px rgba(56, 189, 248, 0.25) !important;
+    }
+
+    .pub-search-wrapper:focus-within .pub-search-icon {
+      color: #38bdf8 !important;
+      stroke: #38bdf8 !important;
+    }
+
+    .pub-filter-tabs {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.55rem !important;
+      align-items: center !important;
+    }
+
+    .filter-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.4rem !important;
+      font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+      font-size: 0.84rem !important;
+      font-weight: 500 !important;
+      padding: 0.4rem 0.95rem !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+      color: #cbd5e1 !important;
+      cursor: pointer !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      user-select: none !important;
+      line-height: 1.4 !important;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.14) !important;
+      color: #ffffff !important;
+      border-color: rgba(56, 189, 248, 0.5) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .filter-btn.active {
+      background: #0284c7 !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 14px rgba(2, 132, 199, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: none !important;
+    }
+
+    .btn-status-pending {
+      background: rgba(245, 158, 11, 0.16) !important;
+      color: #fbbf24 !important;
+      border: 1px solid rgba(245, 158, 11, 0.38) !important;
+      cursor: default !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-status-pending:hover {
+      background: rgba(245, 158, 11, 0.24) !important;
+      color: #fde047 !important;
+      border-color: rgba(245, 158, 11, 0.5) !important;
+    }
+
+    .btn-status-proceeding {
+      background: rgba(56, 189, 248, 0.14) !important;
+      color: #38bdf8 !important;
+      border: 1px solid rgba(56, 189, 248, 0.32) !important;
+      cursor: default !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-status-proceeding:hover {
+      background: rgba(56, 189, 248, 0.22) !important;
+      color: #7dd3fc !important;
+      border-color: rgba(56, 189, 248, 0.5) !important;
+    }
+
+    @media (max-width: 760px) {
+      .pub-toolbar {
+        padding: 1.15rem 1rem !important;
+      }
+      .filter-btn {
+        font-size: 0.78rem !important;
+        padding: 0.32rem 0.75rem !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Global Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="../index.html" class="brand-wrapper">
+        <div class="brand-monogram">AK</div>
+        <div class="brand-text">
+          <span class="brand-name">Abu Kaisar Md Faisal</span>
+          <span class="brand-tagline">Lecturer & Aerodynamics Researcher</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="publications.html" class="nav-link active">Publications</a></li>
+          <li><a href="experience.html" class="nav-link">Experience</a></li>
+          <li><a href="education.html" class="nav-link">Education</a></li>
+          <li><a href="others.html" class="nav-link">3D & Others</a></li>
+          <li><a href="../CV.pdf" class="nav-btn-cv" download>📄 CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Layout -->
+  <main class="layout-container layout-single-column" style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
+    <div class="main-content-flow">
+
+      <!-- Page Banner -->
+      <section class="content-section page-banner">
+        <h1>📄 Research Publications</h1>
+        <p>
+          Author and co-author of 9 peer-reviewed journal papers, 4 book chapters (Elsevier & Springer Nature), and 3 international conference proceedings.
+        </p>
+      </section>
+
+      <!-- Interactive Toolbar: Live Search & Category Filters -->
+      <section class="pub-toolbar">
+        <div class="pub-search-wrapper">
+          <svg class="pub-search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" id="pubSearchInput" class="pub-search-input" placeholder="Search by title, co-author, venue, or keyword (e.g. 'protuberance', 'Masud', 'Ocean Engineering')..." />
+        </div>
+
+        <div class="pub-filter-tabs">
+          <button class="filter-btn active" data-filter="all">All Records (16)</button>
+          <button class="filter-btn" data-filter="journal">📄 Journal Articles (9)</button>
+          <button class="filter-btn" data-filter="book-chapter">📘 Book Chapters (4)</button>
+          <button class="filter-btn" data-filter="conference">🎓 Conference Papers (3)</button>
+          <button class="filter-btn" data-filter="aerodynamics">Aerodynamics & CFD</button>
+          <button class="filter-btn" data-filter="biomimetics">Biomimetics</button>
+          <button class="filter-btn" data-filter="sustainability">Sustainability & Energy</button>
+        </div>
+      </section>
+
+      <!-- Publications List -->
+      <section class="content-section">
+        <ul class="pub-list">
+
+          <!-- J1. IJCFD 2026 Under Review -->
+          <li class="pub-item" data-type="journal" data-tags="cfd, biomimetics, aerodynamics, airfoil, protuberance">
+            <span class="pub-type-badge badge-journal">Journal Article (Under Review)</span>
+            <div class="pub-title">Optimizing Leading-Edge Protuberances for Enhanced Post-Stall Performance of a Bio-Inspired Wing</div>
+            <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Hasan Masud, M., Ankhi, I. J., Siddhpura, M., Siddhpura, A., & Dangol, S. R.</div>
+            <div class="pub-venue">International Journal of Computational Fluid Dynamics, 2026 (Under Review)</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Biomimetics</span>
+              <span class="tag-pill">Protuberances</span>
+              <span class="tag-pill">Post-Stall</span>
+            </div>
+            <div class="pub-actions">
+              <span class="btn-action-sm btn-status-pending">⏳ Under Review</span>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Hasan Masud, M., Ankhi, I. J., Siddhpura, M., Siddhpura, A., & Dangol, S. R. (2026). Optimizing Leading-Edge Protuberances for Enhanced Post-Stall Performance of a Bio-Inspired Wing. International Journal of Computational Fluid Dynamics. Under review.">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-ijcfd2026">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-ijcfd2026" class="bibtex-box">
+@article{faisal2026optimizing,
+  title={Optimizing Leading-Edge Protuberances for Enhanced Post-Stall Performance of a Bio-Inspired Wing},
+  author={Faisal, Abu Kaisar Md and Hasan Masud, M. and Ankhi, I. J. and Siddhpura, M. and Siddhpura, A. and Dangol, S. R.},
+  journal={International Journal of Computational Fluid Dynamics},
+  year={2026},
+  note={Under review}
+}</div>
+          </li>
+
+          <!-- J2. Engineering Research Express -->
+          <li class="pub-item" data-type="journal" data-tags="cfd, biomimetics, automotive, aerodynamics">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Aerodynamic Performance of Bio-inspired Vortex Generator on Automobiles</div>
+            <div class="pub-authors">Saimoon, N. Z., Hasan Masud, M., Salehin, N., Alam, Md. M., <span class="author-me">Faisal, A. K. M.</span>, & Rabiul, M.</div>
+            <div class="pub-venue">Engineering Research Express, 2026</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Biomimetics</span>
+              <span class="tag-pill">Automotive</span>
+              <span class="tag-pill">Vortex Generator</span>
+              <span class="tag-pill">IOP Publishing</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1088/2631-8695/ae3cde" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1088/2631-8695/ae3cde</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Saimoon, N. Z., Hasan Masud, M., Salehin, N., Alam, Md. M., Faisal, A. K. M., & Rabiul, M. (2026). Aerodynamic Performance of Bio-inspired Vortex Generator on Automobiles. Engineering Research Express. https://doi.org/10.1088/2631-8695/ae3cde">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-erx2026">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-erx2026" class="bibtex-box">
+@article{saimoon2026aerodynamic,
+  title={Aerodynamic Performance of Bio-inspired Vortex Generator on Automobiles},
+  author={Saimoon, N. Z. and Hasan Masud, M. and Salehin, N. and Alam, Md. M. and Faisal, Abu Kaisar Md and Rabiul, M.},
+  journal={Engineering Research Express},
+  year={2026},
+  doi={10.1088/2631-8695/ae3cde},
+  publisher={IOP Publishing}
+}</div>
+          </li>
+
+          <!-- J3. Ocean Engineering -->
+          <li class="pub-item" data-type="journal" data-tags="marine, biomimetics, hydrodynamics, aerodynamics">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Translating marine biology into engineering: A review of biomimicry and its applications</div>
+            <div class="pub-authors">Masud, M. H., Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, & Alam, Md. M.</div>
+            <div class="pub-venue">Ocean Engineering, 339, 122108, 2025</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Marine</span>
+              <span class="tag-pill">Biomimetics</span>
+              <span class="tag-pill">Hydrodynamics</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.oceaneng.2025.122108" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/j.oceaneng.2025.122108</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Masud, M. H., Ankhi, I. J., Faisal, A. K. M., & Alam, Md. M. (2025). Translating marine biology into engineering: A review of biomimicry and its applications. Ocean Engineering, 339, 122108. https://doi.org/10.1016/j.oceaneng.2025.122108">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-oe2025">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-oe2025" class="bibtex-box">
+@article{masud2025translating,
+  title={Translating marine biology into engineering: A review of biomimicry and its applications},
+  author={Masud, M. H. and Ankhi, I. J. and Faisal, Abu Kaisar Md and Alam, Md. M.},
+  journal={Ocean Engineering},
+  volume={339},
+  pages={122108},
+  year={2025},
+  doi={10.1016/j.oceaneng.2025.122108},
+  publisher={Elsevier}
+}</div>
+          </li>
+
+          <!-- J4. IJAE -->
+          <li class="pub-item" data-type="journal" data-tags="cfd, aerospace, biomimetics, aerodynamics, mav">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Performance analysis of little penguin wing for the application in Micro Aerial Vehicles: A numerical and experimental approach</div>
+            <div class="pub-authors">Masud, M. H., <span class="author-me">Faisal, A. K. M.</span>, Alam, Md. M., & Dabnichki, P.</div>
+            <div class="pub-venue">International Journal of Aerospace Engineering, 2025</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Aerospace</span>
+              <span class="tag-pill">Biomimetics</span>
+              <span class="tag-pill">MAV</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1155/ijae/9989267" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1155/ijae/9989267</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Masud, M. H., Faisal, A. K. M., Alam, Md. M., & Dabnichki, P. (2025). Performance analysis of little penguin wing for the application in Micro Aerial Vehicles: A numerical and experimental approach. International Journal of Aerospace Engineering. https://doi.org/10.1155/ijae/9989267">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-ijae2025">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-ijae2025" class="bibtex-box">
+@article{masud2025penguin,
+  title={Performance analysis of little penguin wing for the application in Micro Aerial Vehicles: A numerical and experimental approach},
+  author={Masud, M. H. and Faisal, Abu Kaisar Md and Alam, Md. M. and Dabnichki, P.},
+  journal={International Journal of Aerospace Engineering},
+  year={2025},
+  doi={10.1155/ijae/9989267}
+}</div>
+          </li>
+
+          <!-- J5. Energy Nexus 2026 -->
+          <li class="pub-item" data-type="journal" data-tags="sustainability, food waste, energy">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Survey and analysis of consumer behavior for food waste management in Bangladesh</div>
+            <div class="pub-authors">Haque, Md. A., Azad, A. M. A. S., Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, & Masud, M. H.</div>
+            <div class="pub-venue">Energy Nexus, 22, 100695, 2026</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Food Waste</span>
+              <span class="tag-pill">Sustainability</span>
+              <span class="tag-pill">Consumer Behavior</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.nexus.2026.100695" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/j.nexus.2026.100695</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Haque, Md. A., Azad, A. M. A. S., Ankhi, I. J., Faisal, A. K. M., & Masud, M. H. (2026). Survey and analysis of consumer behavior for food waste management in Bangladesh. Energy Nexus, 22, 100695. https://doi.org/10.1016/j.nexus.2026.100695">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-nexus2026">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-nexus2026" class="bibtex-box">
+@article{haque2026survey,
+  title={Survey and analysis of consumer behavior for food waste management in Bangladesh},
+  author={Haque, Md. A. and Azad, A. M. A. S. and Ankhi, I. J. and Faisal, Abu Kaisar Md and Masud, M. H.},
+  journal={Energy Nexus},
+  volume={22},
+  pages={100695},
+  year={2026},
+  doi={10.1016/j.nexus.2026.100695},
+  publisher={Elsevier}
+}</div>
+          </li>
+
+          <!-- J6. IFSET 2025 -->
+          <li class="pub-item" data-type="journal" data-tags="sustainability, thermal, food dryers">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Low-cost innovative food dryers for developing countries: current status and future prospect</div>
+            <div class="pub-authors">Himel, Md. H. H., Akter, M., <span class="author-me">Faisal, A. K. M.</span>, Ahmed, M. M., & Masud, M. H.</div>
+            <div class="pub-venue">Innovative Food Science & Emerging Technologies, 104, 104109, 2025</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Food Dryers</span>
+              <span class="tag-pill">Thermal Engineering</span>
+              <span class="tag-pill">Sustainability</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.ifset.2025.104109" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/j.ifset.2025.104109</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Himel, Md. H. H., Akter, M., Faisal, A. K. M., Ahmed, M. M., & Masud, M. H. (2025). Low-cost innovative food dryers for developing countries: current status and future prospect. Innovative Food Science & Emerging Technologies, 104, 104109. https://doi.org/10.1016/j.ifset.2025.104109">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-ifset2025">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-ifset2025" class="bibtex-box">
+@article{himel2025lowcost,
+  title={Low-cost innovative food dryers for developing countries: current status and future prospect},
+  author={Himel, Md. H. H. and Akter, M. and Faisal, Abu Kaisar Md and Ahmed, M. M. and Masud, M. H.},
+  journal={Innovative Food Science \& Emerging Technologies},
+  volume={104},
+  pages={104109},
+  year={2025},
+  doi={10.1016/j.ifset.2025.104109},
+  publisher={Elsevier}
+}</div>
+          </li>
+
+          <!-- J7. Journal of Cleaner Production -->
+          <li class="pub-item" data-type="journal" data-tags="e-waste, sustainability, environment">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Material flow analysis and risk evaluation of informal and formal E-waste recycling processes in Bangladesh: Towards sustainable management strategies</div>
+            <div class="pub-authors">Ankhi, I. J., Hossain, G. A., <span class="author-me">Faisal, A. K. M.</span>, Hasan, Md. R.-U., Barua, S., & Masud, M. H.</div>
+            <div class="pub-venue">Journal of Cleaner Production, 497, 145090, 2025</div>
+            <div class="pub-tags">
+              <span class="tag-pill">E-waste</span>
+              <span class="tag-pill">Material Flow Analysis</span>
+              <span class="tag-pill">Sustainability</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.jclepro.2025.145090" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/j.jclepro.2025.145090</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Ankhi, I. J., Hossain, G. A., Faisal, A. K. M., Hasan, Md. R.-U., Barua, S., & Masud, M. H. (2025). Material flow analysis and risk evaluation of informal and formal E-waste recycling processes in Bangladesh: Towards sustainable management strategies. Journal of Cleaner Production, 497, 145090. https://doi.org/10.1016/j.jclepro.2025.145090">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-jclp2025">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-jclp2025" class="bibtex-box">
+@article{ankhi2025material,
+  title={Material flow analysis and risk evaluation of informal and formal E-waste recycling processes in Bangladesh: Towards sustainable management strategies},
+  author={Ankhi, I. J. and Hossain, G. A. and Faisal, Abu Kaisar Md and Hasan, Md. R.-U. and Barua, S. and Masud, M. H.},
+  journal={Journal of Cleaner Production},
+  volume={497},
+  pages={145090},
+  year={2025},
+  doi={10.1016/j.jclepro.2025.145090},
+  publisher={Elsevier}
+}</div>
+          </li>
+
+          <!-- J8. ESPR -->
+          <li class="pub-item" data-type="journal" data-tags="e-waste, environment, sustainability">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Emerging concerns associated with E-waste exposure in Bangladesh</div>
+            <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Hossain, G. A., Ahmed, M. M., Siddhpura, M., & Masud, M. H.</div>
+            <div class="pub-venue">Environmental Science and Pollution Research, 2025</div>
+            <div class="pub-tags">
+              <span class="tag-pill">E-waste</span>
+              <span class="tag-pill">Environmental Pollution</span>
+              <span class="tag-pill">Springer</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1007/s11356-025-36268-9" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1007/s11356-025-36268-9</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Ankhi, I. J., Hossain, G. A., Ahmed, M. M., Siddhpura, M., & Masud, M. H. (2025). Emerging concerns associated with E-waste exposure in Bangladesh. Environmental Science and Pollution Research. https://doi.org/10.1007/s11356-025-36268-9">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-espr2025">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-espr2025" class="bibtex-box">
+@article{faisal2025emerging,
+  title={Emerging concerns associated with E-waste exposure in Bangladesh},
+  author={Faisal, Abu Kaisar Md and Ankhi, I. J. and Hossain, G. A. and Ahmed, M. M. and Siddhpura, M. and Masud, M. H.},
+  journal={Environmental Science and Pollution Research},
+  year={2025},
+  doi={10.1007/s11356-025-36268-9},
+  publisher={Springer}
+}</div>
+          </li>
+
+          <!-- J9. Propulsion Technology -->
+          <li class="pub-item" data-type="journal" data-tags="cfd, airfoil, optimization, aerodynamics">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Optimization of dimpled surface of NACA0012 airfoil to enhance the aerodynamic performance</div>
+            <div class="pub-authors">Olayiwola, O. S., Masud, M. H., <span class="author-me">Faisal, A. K. M.</span>, Siddhpura, M., & Siddhpura, A.</div>
+            <div class="pub-venue">Tuijin Jishu/Journal of Propulsion Technology, 50, 2024</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Dimples</span>
+              <span class="tag-pill">Airfoil Optimization</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.52783/tjjpt.v45.i03.7860" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.52783/tjjpt.v45.i03.7860</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Olayiwola, O. S., Masud, M. H., Faisal, A. K. M., Siddhpura, M., & Siddhpura, A. (2024). Optimization of dimpled surface of NACA0012 airfoil to enhance the aerodynamic performance. Tuijin Jishu/Journal of Propulsion Technology, 50. https://doi.org/10.52783/tjjpt.v45.i03.7860">
+                <span>📋 Copy Citation</span>
+              </button>
+              <button class="btn-action-sm btn-toggle-bibtex" data-target="bib-jpt2024">
+                <span>{ } BibTeX</span>
+              </button>
+            </div>
+            <div id="bib-jpt2024" class="bibtex-box">
+@article{olayiwola2024optimization,
+  title={Optimization of dimpled surface of NACA0012 airfoil to enhance the aerodynamic performance},
+  author={Olayiwola, O. S. and Masud, M. H. and Faisal, Abu Kaisar Md and Siddhpura, M. and Siddhpura, A.},
+  journal={Tuijin Jishu/Journal of Propulsion Technology},
+  volume={50},
+  year={2024},
+  doi={10.52783/tjjpt.v45.i03.7860}
+}</div>
+          </li>
+
+          <!-- Book Chapters -->
+          <!-- BC1. Elsevier 2026 Biomimetic Modification -->
+          <li class="pub-item" data-type="book-chapter" data-tags="biomimetics, cfd, airfoil, aerodynamics">
+            <span class="pub-type-badge badge-chapter">Book Chapter</span>
+            <div class="pub-title">Aerodynamic performance improvement of conventional airfoil with biomimetic modification</div>
+            <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Qasem, N. A. A., & Masud, M. H.</div>
+            <div class="pub-venue">In Biomimetics for Aviation and Marine Applications (pp. 655–694). Elsevier, 2026</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Biomimetics</span>
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Aviation & Marine</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/B978-0-443-33763-5.00008-4" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/B978-0-443-33763-5.00008-4</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Ankhi, I. J., Qasem, N. A. A., & Masud, M. H. (2026). Aerodynamic performance improvement of conventional airfoil with biomimetic modification. In Biomimetics for Aviation and Marine Applications (pp. 655–694). Elsevier. https://doi.org/10.1016/B978-0-443-33763-5.00008-4">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+          <!-- BC2. Elsevier 2026 Reynolds Number -->
+          <li class="pub-item" data-type="book-chapter" data-tags="cfd, aerodynamics, reynolds, biomimetics">
+            <span class="pub-type-badge badge-chapter">Book Chapter</span>
+            <div class="pub-title">Effect of Reynolds number on the aerodynamic performance of a bio-inspired optimized airfoil: a numerical approach</div>
+            <div class="pub-authors">Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, Qasem, N. A. A., & Masud, M. H.</div>
+            <div class="pub-venue">In Biomimetics for Aviation and Marine Applications (pp. 695–723). Elsevier, 2026</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Reynolds Number</span>
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Bio-inspired Airfoil</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/B978-0-443-33763-5.00012-6" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/B978-0-443-33763-5.00012-6</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Ankhi, I. J., Faisal, A. K. M., Qasem, N. A. A., & Masud, M. H. (2026). Effect of Reynolds number on the aerodynamic performance of a bio-inspired optimized airfoil: a numerical approach. In Biomimetics for Aviation and Marine Applications (pp. 695–723). Elsevier. https://doi.org/10.1016/B978-0-443-33763-5.00012-6">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+          <!-- BC3. Springer Nature 2025 Food Waste -->
+          <li class="pub-item" data-type="book-chapter" data-tags="sustainability, food waste, recycling">
+            <span class="pub-type-badge badge-chapter">Book Chapter</span>
+            <div class="pub-title">Innovative methods for transforming food waste into resourceful by-products</div>
+            <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ahmed, M. M., Ahmed, R., Ahmed, Md. R., & Masud, M. H.</div>
+            <div class="pub-venue">In Resource recycling and management of food waste (pp. 143–183). Springer Nature Switzerland, 2025</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Food Waste Recycling</span>
+              <span class="tag-pill">Sustainability</span>
+              <span class="tag-pill">Springer Nature</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1007/978-3-031-86688-3_8" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1007/978-3-031-86688-3_8</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Ahmed, M. M., Ahmed, R., Ahmed, Md. R., & Masud, M. H. (2025). Innovative methods for transforming food waste into resourceful by-products. In Resource recycling and management of food waste (pp. 143–183). Springer Nature Switzerland. https://doi.org/10.1007/978-3-031-86688-3_8">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+          <!-- BC4. Elsevier 2024 Methanol -->
+          <li class="pub-item" data-type="book-chapter" data-tags="sustainability, waste-to-energy, methanol">
+            <span class="pub-type-badge badge-chapter">Book Chapter</span>
+            <div class="pub-title">Methanol production from municipal solid waste</div>
+            <div class="pub-authors">Ahmed, M. M., Hossain, G. A., <span class="author-me">Faisal, A. K. M.</span>, Ananno, A. A., Rashid, M., & Masud, M. H.</div>
+            <div class="pub-venue">In Reference Module in Chemistry, Molecular Sciences and Chemical Engineering. Elsevier, 2024</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Municipal Solid Waste</span>
+              <span class="tag-pill">Methanol Production</span>
+              <span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/B978-0-443-15740-0.00031-8" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1016/B978-0-443-15740-0.00031-8</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Ahmed, M. M., Hossain, G. A., Faisal, A. K. M., Ananno, A. A., Rashid, M., & Masud, M. H. (2024). Methanol production from municipal solid waste. Reference Module in Chemistry, Molecular Sciences and Chemical Engineering. Elsevier. https://doi.org/10.1016/B978-0-443-15740-0.00031-8">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+          <!-- Conference Papers -->
+          <!-- C1. BSME 2026 VAWT -->
+          <li class="pub-item" data-type="conference" data-tags="cfd, wind energy, vawt, aerodynamics">
+            <span class="pub-type-badge badge-conf">Conference Paper</span>
+            <div class="pub-title">Numerical investigation of the aerodynamic performance of different airfoil configurations for low-speed vertical axis wind turbine applications</div>
+            <div class="pub-authors">Ahmed, M. M., <span class="author-me">Faisal, A. K. M.</span>, Shahadat, M. Md. Z., Hossain, G. A., & Masud, M. H.</div>
+            <div class="pub-venue">9th BSME International Conference on Thermal Engineering, 140001, 2026 (AIP Publishing)</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Wind Energy</span>
+              <span class="tag-pill">VAWT</span>
+              <span class="tag-pill">AIP</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1063/5.0327877" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1063/5.0327877</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Ahmed, M. M., Faisal, A. K. M., Shahadat, M. Md. Z., Hossain, G. A., & Masud, M. H. (2026). Numerical investigation of the aerodynamic performance of different airfoil configurations for low-speed vertical axis wind turbine applications. 9th BSME ICTE, 140001. https://doi.org/10.1063/5.0327877">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+          <!-- C2. BSME 2026 Glider -->
+          <li class="pub-item" data-type="conference" data-tags="marine, cfd, glider, aerodynamics, hydrodynamics">
+            <span class="pub-type-badge badge-conf">Conference Paper</span>
+            <div class="pub-title">Design modification of Slocum underwater glider: A numerical approach</div>
+            <div class="pub-authors">Hossain, G. A., <span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Dabnichki, P., & Masud, M. H.</div>
+            <div class="pub-venue">9th BSME International Conference on Thermal Engineering, 090005, 2026 (AIP Publishing)</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Marine</span>
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">Slocum Glider</span>
+              <span class="tag-pill">AIP</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1063/5.0328161" target="_blank" class="btn-action-sm">
+                <span>🔗 DOI: 10.1063/5.0328161</span>
+              </a>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Hossain, G. A., Faisal, A. K. M., Ankhi, I. J., Dabnichki, P., & Masud, M. H. (2026). Design modification of Slocum underwater glider: A numerical approach. 9th BSME ICTE, 090005. https://doi.org/10.1063/5.0328161">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+          <!-- C3. ICMIME 2024 Blending Airfoils -->
+          <li class="pub-item" data-type="conference" data-tags="cfd, wind energy, vawt, aerodynamics">
+            <span class="pub-type-badge badge-conf">Conference Paper</span>
+            <div class="pub-title">Blending airfoils: An innovative approach to improve the aerodynamic performance of a vertical axis wind turbine</div>
+            <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Hossain, G. A., & Masud, M. H.</div>
+            <div class="pub-venue">6th International Conference on Mechanical, Industrial and Materials Engineering (ICMIME), 2024</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span>
+              <span class="tag-pill">VAWT</span>
+              <span class="tag-pill">Airfoil Blending</span>
+              <span class="tag-pill">ICMIME</span>
+            </div>
+            <div class="pub-actions">
+              <span class="btn-action-sm btn-status-proceeding">📍 Conference Proceeding</span>
+              <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Ankhi, I. J., Hossain, G. A., & Masud, M. H. (2024, December 12). Blending airfoils: An innovative approach to improve the aerodynamic performance of a vertical axis wind turbine. 6th ICMIME.">
+                <span>📋 Copy Citation</span>
+              </button>
+            </div>
+          </li>
+
+        </ul>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-text">
+        <p><strong>Abu Kaisar Md Faisal</strong> — Mechanical Engineer, Lecturer & Aerodynamics Researcher</p>
+        <p>&copy; 2026 Abu Kaisar Md Faisal. Hosted on GitHub Pages.</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="experience.html">Experience</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+      <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+        ↑ Top
+      </button>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+
+</html>

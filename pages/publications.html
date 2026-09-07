@@ -7,7 +7,517 @@
   <title>Publications | Abu Kaisar Md Faisal</title>
   <meta name="description" content="Peer-reviewed journal articles, book chapters, and conference papers by Abu Kaisar Md Faisal in CFD, biomimetic aerodynamics, and sustainable energy." />
   <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../style.css?v=20260908_inspector" />
+  <style>
+    /* =========================================================================
+       Direct Publications Toolbar Styling (Zero-Cache Immediate Render)
+       ========================================================================= */
+    .pub-toolbar {
+      background: var(--bg-surface, rgba(11, 17, 26, 0.88)) !important;
+      backdrop-filter: blur(20px) !important;
+      -webkit-backdrop-filter: blur(20px) !important;
+      border: 1px solid var(--border-card, rgba(255, 255, 255, 0.15)) !important;
+      border-radius: 12px !important;
+      padding: 1.35rem 1.6rem !important;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.45) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1rem !important;
+      margin-bottom: 0.5rem !important;
+    }
+
+    .pub-search-wrapper {
+      position: relative !important;
+      width: 100% !important;
+      display: flex !important;
+      align-items: center !important;
+    }
+
+    .pub-search-icon {
+      position: absolute !important;
+      left: 1.1rem !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
+      color: #94a3b8 !important;
+      pointer-events: none !important;
+      stroke: #94a3b8 !important;
+      width: 18px !important;
+      height: 18px !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .pub-search-input {
+      width: 100% !important;
+      box-sizing: border-box !important;
+      padding: 0.72rem 1.1rem 0.72rem 2.85rem !important;
+      font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+      font-size: 0.92rem !important;
+      color: #ffffff !important;
+      background: rgba(15, 23, 42, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 8px !important;
+      outline: none !important;
+      transition: all 0.25s ease !important;
+    }
+
+    .pub-search-input::placeholder {
+      color: #94a3b8 !important;
+      opacity: 0.8 !important;
+    }
+
+    .pub-search-input:focus {
+      border-color: #38bdf8 !important;
+      background: rgba(15, 23, 42, 0.98) !important;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25), 0 0 16px rgba(56, 189, 248, 0.25) !important;
+    }
+
+    .pub-search-wrapper:focus-within .pub-search-icon {
+      color: #38bdf8 !important;
+      stroke: #38bdf8 !important;
+    }
+
+    .pub-filter-tabs {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.55rem !important;
+      align-items: center !important;
+    }
+
+    .filter-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 0.4rem !important;
+      font-family: var(--font-sans, system-ui, -apple-system, sans-serif) !important;
+      font-size: 0.84rem !important;
+      font-weight: 500 !important;
+      padding: 0.4rem 0.95rem !important;
+      border-radius: 9999px !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      background: rgba(255, 255, 255, 0.06) !important;
+      color: #cbd5e1 !important;
+      cursor: pointer !important;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      user-select: none !important;
+      line-height: 1.4 !important;
+    }
+
+    .filter-btn:hover {
+      background: rgba(255, 255, 255, 0.14) !important;
+      color: #ffffff !important;
+      border-color: rgba(56, 189, 248, 0.5) !important;
+      transform: translateY(-1px) !important;
+    }
+
+    .filter-btn.active {
+      background: #0284c7 !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 14px rgba(2, 132, 199, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+      transform: none !important;
+    }
+
+    .btn-status-pending {
+      background: rgba(245, 158, 11, 0.16) !important;
+      color: #fbbf24 !important;
+      border: 1px solid rgba(245, 158, 11, 0.38) !important;
+      cursor: default !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-status-pending:hover {
+      background: rgba(245, 158, 11, 0.24) !important;
+      color: #fde047 !important;
+      border-color: rgba(245, 158, 11, 0.5) !important;
+    }
+
+    .btn-status-proceeding {
+      background: rgba(56, 189, 248, 0.14) !important;
+      color: #38bdf8 !important;
+      border: 1px solid rgba(56, 189, 248, 0.32) !important;
+      cursor: default !important;
+      font-weight: 600 !important;
+    }
+
+    .btn-status-proceeding:hover {
+      background: rgba(56, 189, 248, 0.22) !important;
+      color: #7dd3fc !important;
+      border-color: rgba(56, 189, 248, 0.5) !important;
+    }
+
+    /* Publications 2-Column Inspector Layout */
+    .pub-inspector-layout {
+      display: grid !important;
+      grid-template-columns: minmax(0, 1fr) 350px !important;
+      gap: 2.2rem !important;
+      align-items: start !important;
+      max-width: 1320px !important;
+      margin: 2.5rem auto 3.5rem !important;
+      padding: 0 1.5rem !important;
+      width: 100% !important;
+    }
+
+    .pub-main-column {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 2rem !important;
+      min-width: 0 !important;
+    }
+
+    /* Sticky Inspector Sidebar */
+    .pub-inspector-sidebar {
+      position: sticky !important;
+      top: 92px !important;
+      z-index: 100 !important;
+      width: 100% !important;
+    }
+
+    .inspector-card {
+      background: rgba(11, 17, 26, 0.92) !important;
+      backdrop-filter: blur(24px) !important;
+      -webkit-backdrop-filter: blur(24px) !important;
+      border: 1px solid rgba(56, 189, 248, 0.28) !important;
+      border-radius: 14px !important;
+      padding: 1.4rem !important;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55), 0 0 20px rgba(56, 189, 248, 0.1) !important;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      position: relative !important;
+      overflow: hidden !important;
+    }
+
+    .inspector-card::before {
+      content: '' !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      height: 3px !important;
+      background: linear-gradient(90deg, #0284c7, #38bdf8, #818cf8) !important;
+    }
+
+    .inspector-header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 1rem !important;
+      padding-bottom: 0.75rem !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      gap: 8px !important;
+    }
+
+    .inspector-badge {
+      display: flex !important;
+      align-items: center !important;
+      gap: 8px !important;
+      font-size: 0.76rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      color: #38bdf8 !important;
+    }
+
+    .inspector-pulse-dot {
+      width: 7px !important;
+      height: 7px !important;
+      border-radius: 50% !important;
+      background: #38bdf8 !important;
+      box-shadow: 0 0 8px #38bdf8 !important;
+      animation: hudPulse 2s infinite !important;
+    }
+
+    .inspector-pin-tag {
+      font-size: 0.7rem !important;
+      font-weight: 700 !important;
+      color: #fbbf24 !important;
+      background: rgba(245, 158, 11, 0.16) !important;
+      border: 1px solid rgba(245, 158, 11, 0.35) !important;
+      padding: 2px 8px !important;
+      border-radius: 9999px !important;
+      display: none !important;
+    }
+
+    .inspector-pin-tag.visible {
+      display: inline-block !important;
+    }
+
+    .inspector-close-btn {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      color: #cbd5e1 !important;
+      width: 26px !important;
+      height: 26px !important;
+      border-radius: 6px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.75rem !important;
+      cursor: pointer !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .inspector-close-btn:hover {
+      background: rgba(239, 68, 68, 0.25) !important;
+      border-color: #ef4444 !important;
+      color: #ffffff !important;
+    }
+
+    /* Empty State */
+    .inspector-empty-state {
+      text-align: center !important;
+      padding: 2.2rem 1rem !important;
+      color: #94a3b8 !important;
+    }
+
+    .inspector-empty-state .empty-icon {
+      font-size: 2.2rem !important;
+      margin-bottom: 0.75rem !important;
+      display: block !important;
+    }
+
+    .inspector-empty-state h4 {
+      font-size: 0.98rem !important;
+      color: #ffffff !important;
+      font-weight: 600 !important;
+      margin-bottom: 0.45rem !important;
+    }
+
+    .inspector-empty-state p {
+      font-size: 0.82rem !important;
+      line-height: 1.55 !important;
+      color: #94a3b8 !important;
+    }
+
+    /* Active Inspection Content */
+    .inspector-paper-meta {
+      background: rgba(15, 23, 42, 0.75) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 8px !important;
+      padding: 0.85rem !important;
+      margin-bottom: 1.1rem !important;
+    }
+
+    .inspector-paper-type {
+      font-size: 0.68rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.06em !important;
+      color: #38bdf8 !important;
+      margin-bottom: 0.3rem !important;
+      display: block !important;
+    }
+
+    .inspector-paper-title {
+      font-size: 0.88rem !important;
+      font-weight: 700 !important;
+      color: #ffffff !important;
+      line-height: 1.35 !important;
+      margin-bottom: 0.4rem !important;
+    }
+
+    .inspector-paper-venue {
+      font-size: 0.76rem !important;
+      font-style: italic !important;
+      color: #94a3b8 !important;
+      line-height: 1.3 !important;
+    }
+
+    /* Authors List in Inspector */
+    .inspector-authors-title {
+      font-size: 0.75rem !important;
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.08em !important;
+      color: #94a3b8 !important;
+      margin-bottom: 0.75rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
+    .inspector-authors-list {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 0.65rem !important;
+      max-height: 380px !important;
+      overflow-y: auto !important;
+      padding-right: 4px !important;
+    }
+
+    .inspector-authors-list::-webkit-scrollbar {
+      width: 4px !important;
+    }
+    .inspector-authors-list::-webkit-scrollbar-thumb {
+      background: rgba(56, 189, 248, 0.25) !important;
+      border-radius: 4px !important;
+    }
+
+    .author-card {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 0.65rem !important;
+      padding: 0.65rem 0.75rem !important;
+      background: rgba(15, 23, 42, 0.6) !important;
+      border: 1px solid rgba(255, 255, 255, 0.08) !important;
+      border-radius: 8px !important;
+      transition: all 0.2s ease !important;
+    }
+
+    .author-card:hover {
+      background: rgba(15, 23, 42, 0.9) !important;
+      border-color: rgba(56, 189, 248, 0.35) !important;
+      transform: translateX(2px) !important;
+    }
+
+    .author-card.author-is-me {
+      border-color: rgba(56, 189, 248, 0.45) !important;
+      background: rgba(2, 132, 199, 0.12) !important;
+    }
+
+    .author-info-left {
+      display: flex !important;
+      align-items: center !important;
+      gap: 0.6rem !important;
+      min-width: 0 !important;
+      flex: 1 !important;
+    }
+
+    .author-avatar {
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 50% !important;
+      background: linear-gradient(135deg, #1e293b, #334155) !important;
+      color: #e2e8f0 !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
+      flex-shrink: 0 !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    }
+
+    .author-card.author-is-me .author-avatar {
+      background: linear-gradient(135deg, #0284c7, #38bdf8) !important;
+      color: #ffffff !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.4) !important;
+    }
+
+    .author-text {
+      min-width: 0 !important;
+    }
+
+    .author-name {
+      font-size: 0.82rem !important;
+      font-weight: 600 !important;
+      color: #ffffff !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+    }
+
+    .author-me-tag {
+      font-size: 0.62rem !important;
+      font-weight: 700 !important;
+      background: #38bdf8 !important;
+      color: #070a0f !important;
+      padding: 1px 5px !important;
+      border-radius: 3px !important;
+      letter-spacing: 0.04em !important;
+    }
+
+    .author-role {
+      font-size: 0.7rem !important;
+      color: #94a3b8 !important;
+      white-space: nowrap !important;
+      overflow: hidden !important;
+      text-overflow: ellipsis !important;
+    }
+
+    .author-scholar-btn {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 5px 9px !important;
+      border-radius: 6px !important;
+      font-size: 0.72rem !important;
+      font-weight: 600 !important;
+      color: #38bdf8 !important;
+      background: rgba(56, 189, 248, 0.12) !important;
+      border: 1px solid rgba(56, 189, 248, 0.28) !important;
+      text-decoration: none !important;
+      flex-shrink: 0 !important;
+      transition: all 0.2s ease !important;
+      white-space: nowrap !important;
+    }
+
+    .author-scholar-btn:hover {
+      background: #38bdf8 !important;
+      color: #070a0f !important;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.4) !important;
+    }
+
+    .pub-item {
+      cursor: pointer !important;
+    }
+
+    .pub-item:hover {
+      border-color: #38bdf8 !important;
+      box-shadow: 0 6px 24px rgba(56, 189, 248, 0.2) !important;
+      transform: translateY(-2px) !important;
+    }
+
+    .pub-item.is-inspected {
+      border-color: #38bdf8 !important;
+      background: rgba(15, 23, 42, 0.95) !important;
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.35), inset 0 0 0 1px #38bdf8 !important;
+      transform: translateX(4px) !important;
+    }
+
+    @media (max-width: 1024px) {
+      .pub-inspector-layout {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+      }
+
+      .pub-inspector-sidebar {
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        z-index: 1100 !important;
+        max-width: 100% !important;
+        transform: translateY(105%) !important;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      }
+
+      .pub-inspector-sidebar.mobile-active {
+        transform: translateY(0) !important;
+      }
+
+      .inspector-card {
+        border-radius: 16px 16px 0 0 !important;
+        border-bottom: none !important;
+        max-height: 75vh !important;
+        box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7) !important;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .pub-toolbar {
+        padding: 1.15rem 1rem !important;
+      }
+      .filter-btn {
+        font-size: 0.78rem !important;
+        padding: 0.32rem 0.75rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -33,25 +543,26 @@
 
       <nav>
         <ul class="nav-menu" id="navMenu">
-          <li><a href="../index.html" class="nav-link">Home / Research</a></li>
+          <li><a href="../index.html" class="nav-link">Home</a></li>
           <li><a href="publications.html" class="nav-link active">Publications</a></li>
-          <li><a href="education.html" class="nav-link">Education</a></li>
           <li><a href="experience.html" class="nav-link">Experience</a></li>
-          <li><a href="others.html" class="nav-link">Others</a></li>
-          <li><a href="../CV.pdf" class="nav-btn-cv" download>📄 Download CV</a></li>
+          <li><a href="education.html" class="nav-link">Education</a></li>
+          <li><a href="others.html" class="nav-link">3D & Others</a></li>
+          <li><a href="../CV.pdf" class="nav-btn-cv" download>📄 CV</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content Layout -->
-  <main class="layout-container layout-single-column" style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
-    <div class="main-content-flow">
+  <!-- Main Content Layout with Interactive Author Inspector Sidebar -->
+  <main class="layout-container pub-inspector-layout" style="margin-top: 2.5rem; margin-bottom: 3.5rem;">
+    <div class="pub-main-column">
+      <div class="main-content-flow">
 
       <!-- Page Banner -->
-      <section class="content-section" style="background: linear-gradient(135deg, #002842 0%, #045185 100%); color: white; border: none;">
-        <h1 style="color: white; font-family: var(--font-serif); font-size: 2.2rem; margin-bottom: 0.5rem;">📄 Research Publications</h1>
-        <p style="color: #bae6fd; font-size: 1.05rem; margin-bottom: 0;">
+      <section class="content-section page-banner">
+        <h1>📄 Research Publications</h1>
+        <p>
           Author and co-author of 9 peer-reviewed journal papers, 4 book chapters (Elsevier & Springer Nature), and 3 international conference proceedings.
         </p>
       </section>
@@ -82,7 +593,7 @@
         <ul class="pub-list">
 
           <!-- J1. IJCFD 2026 Under Review -->
-          <li class="pub-item" data-type="journal" data-tags="cfd, biomimetics, aerodynamics, airfoil, protuberance">
+          <li class="pub-item" data-type="journal" data-tags="cfd, biomimetics, aerodynamics, airfoil, protuberance" data-authors="[&quot;Faisal, A. K. M.&quot;, &quot;Hasan Masud, M.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Siddhpura, M.&quot;, &quot;Siddhpura, A.&quot;, &quot;Dangol, S. R.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article (Under Review)</span>
             <div class="pub-title">Optimizing Leading-Edge Protuberances for Enhanced Post-Stall Performance of a Bio-Inspired Wing</div>
             <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Hasan Masud, M., Ankhi, I. J., Siddhpura, M., Siddhpura, A., & Dangol, S. R.</div>
@@ -94,7 +605,7 @@
               <span class="tag-pill">Post-Stall</span>
             </div>
             <div class="pub-actions">
-              <span class="btn-action-sm" style="background: #f1f5f9; cursor: default;">⏳ Under Review</span>
+              <span class="btn-action-sm btn-status-pending">⏳ Under Review</span>
               <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Hasan Masud, M., Ankhi, I. J., Siddhpura, M., Siddhpura, A., & Dangol, S. R. (2026). Optimizing Leading-Edge Protuberances for Enhanced Post-Stall Performance of a Bio-Inspired Wing. International Journal of Computational Fluid Dynamics. Under review.">
                 <span>📋 Copy Citation</span>
               </button>
@@ -113,7 +624,7 @@
           </li>
 
           <!-- J2. Engineering Research Express -->
-          <li class="pub-item" data-type="journal" data-tags="cfd, biomimetics, automotive, aerodynamics">
+          <li class="pub-item" data-type="journal" data-tags="cfd, biomimetics, automotive, aerodynamics" data-authors="[&quot;Saimoon, N. Z.&quot;, &quot;Hasan Masud, M.&quot;, &quot;Salehin, N.&quot;, &quot;Alam, Md. M.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Rabiul, M.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Aerodynamic Performance of Bio-inspired Vortex Generator on Automobiles</div>
             <div class="pub-authors">Saimoon, N. Z., Hasan Masud, M., Salehin, N., Alam, Md. M., <span class="author-me">Faisal, A. K. M.</span>, & Rabiul, M.</div>
@@ -148,7 +659,7 @@
           </li>
 
           <!-- J3. Ocean Engineering -->
-          <li class="pub-item" data-type="journal" data-tags="marine, biomimetics, hydrodynamics, aerodynamics">
+          <li class="pub-item" data-type="journal" data-tags="marine, biomimetics, hydrodynamics, aerodynamics" data-authors="[&quot;Masud, M. H.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Alam, Md. M.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Translating marine biology into engineering: A review of biomimicry and its applications</div>
             <div class="pub-authors">Masud, M. H., Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, & Alam, Md. M.</div>
@@ -184,7 +695,7 @@
           </li>
 
           <!-- J4. IJAE -->
-          <li class="pub-item" data-type="journal" data-tags="cfd, aerospace, biomimetics, aerodynamics, mav">
+          <li class="pub-item" data-type="journal" data-tags="cfd, aerospace, biomimetics, aerodynamics, mav" data-authors="[&quot;Masud, M. H.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Alam, Md. M.&quot;, &quot;Dabnichki, P.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Performance analysis of little penguin wing for the application in Micro Aerial Vehicles: A numerical and experimental approach</div>
             <div class="pub-authors">Masud, M. H., <span class="author-me">Faisal, A. K. M.</span>, Alam, Md. M., & Dabnichki, P.</div>
@@ -217,7 +728,7 @@
           </li>
 
           <!-- J5. Energy Nexus 2026 -->
-          <li class="pub-item" data-type="journal" data-tags="sustainability, food waste, energy">
+          <li class="pub-item" data-type="journal" data-tags="sustainability, food waste, energy" data-authors="[&quot;Haque, Md. A.&quot;, &quot;Azad, A. M. A. S.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Survey and analysis of consumer behavior for food waste management in Bangladesh</div>
             <div class="pub-authors">Haque, Md. A., Azad, A. M. A. S., Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, & Masud, M. H.</div>
@@ -253,7 +764,7 @@
           </li>
 
           <!-- J6. IFSET 2025 -->
-          <li class="pub-item" data-type="journal" data-tags="sustainability, thermal, food dryers">
+          <li class="pub-item" data-type="journal" data-tags="sustainability, thermal, food dryers" data-authors="[&quot;Himel, Md. H. H.&quot;, &quot;Akter, M.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Ahmed, M. M.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Low-cost innovative food dryers for developing countries: current status and future prospect</div>
             <div class="pub-authors">Himel, Md. H. H., Akter, M., <span class="author-me">Faisal, A. K. M.</span>, Ahmed, M. M., & Masud, M. H.</div>
@@ -289,7 +800,7 @@
           </li>
 
           <!-- J7. Journal of Cleaner Production -->
-          <li class="pub-item" data-type="journal" data-tags="e-waste, sustainability, environment">
+          <li class="pub-item" data-type="journal" data-tags="e-waste, sustainability, environment" data-authors="[&quot;Ankhi, I. J.&quot;, &quot;Hossain, G. A.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Hasan, Md. R.-U.&quot;, &quot;Barua, S.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Material flow analysis and risk evaluation of informal and formal E-waste recycling processes in Bangladesh: Towards sustainable management strategies</div>
             <div class="pub-authors">Ankhi, I. J., Hossain, G. A., <span class="author-me">Faisal, A. K. M.</span>, Hasan, Md. R.-U., Barua, S., & Masud, M. H.</div>
@@ -325,7 +836,7 @@
           </li>
 
           <!-- J8. ESPR -->
-          <li class="pub-item" data-type="journal" data-tags="e-waste, environment, sustainability">
+          <li class="pub-item" data-type="journal" data-tags="e-waste, environment, sustainability" data-authors="[&quot;Faisal, A. K. M.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Hossain, G. A.&quot;, &quot;Ahmed, M. M.&quot;, &quot;Siddhpura, M.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Emerging concerns associated with E-waste exposure in Bangladesh</div>
             <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Hossain, G. A., Ahmed, M. M., Siddhpura, M., & Masud, M. H.</div>
@@ -358,7 +869,7 @@
           </li>
 
           <!-- J9. Propulsion Technology -->
-          <li class="pub-item" data-type="journal" data-tags="cfd, airfoil, optimization, aerodynamics">
+          <li class="pub-item" data-type="journal" data-tags="cfd, airfoil, optimization, aerodynamics" data-authors="[&quot;Olayiwola, O. S.&quot;, &quot;Masud, M. H.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Siddhpura, M.&quot;, &quot;Siddhpura, A.&quot;]">
             <span class="pub-type-badge badge-journal">Journal Article</span>
             <div class="pub-title">Optimization of dimpled surface of NACA0012 airfoil to enhance the aerodynamic performance</div>
             <div class="pub-authors">Olayiwola, O. S., Masud, M. H., <span class="author-me">Faisal, A. K. M.</span>, Siddhpura, M., & Siddhpura, A.</div>
@@ -392,7 +903,7 @@
 
           <!-- Book Chapters -->
           <!-- BC1. Elsevier 2026 Biomimetic Modification -->
-          <li class="pub-item" data-type="book-chapter" data-tags="biomimetics, cfd, airfoil, aerodynamics">
+          <li class="pub-item" data-type="book-chapter" data-tags="biomimetics, cfd, airfoil, aerodynamics" data-authors="[&quot;Faisal, A. K. M.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Qasem, N. A. A.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-chapter">Book Chapter</span>
             <div class="pub-title">Aerodynamic performance improvement of conventional airfoil with biomimetic modification</div>
             <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Qasem, N. A. A., & Masud, M. H.</div>
@@ -414,7 +925,7 @@
           </li>
 
           <!-- BC2. Elsevier 2026 Reynolds Number -->
-          <li class="pub-item" data-type="book-chapter" data-tags="cfd, aerodynamics, reynolds, biomimetics">
+          <li class="pub-item" data-type="book-chapter" data-tags="cfd, aerodynamics, reynolds, biomimetics" data-authors="[&quot;Ankhi, I. J.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Qasem, N. A. A.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-chapter">Book Chapter</span>
             <div class="pub-title">Effect of Reynolds number on the aerodynamic performance of a bio-inspired optimized airfoil: a numerical approach</div>
             <div class="pub-authors">Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, Qasem, N. A. A., & Masud, M. H.</div>
@@ -436,7 +947,7 @@
           </li>
 
           <!-- BC3. Springer Nature 2025 Food Waste -->
-          <li class="pub-item" data-type="book-chapter" data-tags="sustainability, food waste, recycling">
+          <li class="pub-item" data-type="book-chapter" data-tags="sustainability, food waste, recycling" data-authors="[&quot;Faisal, A. K. M.&quot;, &quot;Ahmed, M. M.&quot;, &quot;Ahmed, R.&quot;, &quot;Ahmed, Md. R.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-chapter">Book Chapter</span>
             <div class="pub-title">Innovative methods for transforming food waste into resourceful by-products</div>
             <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ahmed, M. M., Ahmed, R., Ahmed, Md. R., & Masud, M. H.</div>
@@ -457,7 +968,7 @@
           </li>
 
           <!-- BC4. Elsevier 2024 Methanol -->
-          <li class="pub-item" data-type="book-chapter" data-tags="sustainability, waste-to-energy, methanol">
+          <li class="pub-item" data-type="book-chapter" data-tags="sustainability, waste-to-energy, methanol" data-authors="[&quot;Ahmed, M. M.&quot;, &quot;Hossain, G. A.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Ananno, A. A.&quot;, &quot;Rashid, M.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-chapter">Book Chapter</span>
             <div class="pub-title">Methanol production from municipal solid waste</div>
             <div class="pub-authors">Ahmed, M. M., Hossain, G. A., <span class="author-me">Faisal, A. K. M.</span>, Ananno, A. A., Rashid, M., & Masud, M. H.</div>
@@ -479,7 +990,7 @@
 
           <!-- Conference Papers -->
           <!-- C1. BSME 2026 VAWT -->
-          <li class="pub-item" data-type="conference" data-tags="cfd, wind energy, vawt, aerodynamics">
+          <li class="pub-item" data-type="conference" data-tags="cfd, wind energy, vawt, aerodynamics" data-authors="[&quot;Ahmed, M. M.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Shahadat, M. Md. Z.&quot;, &quot;Hossain, G. A.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-conf">Conference Paper</span>
             <div class="pub-title">Numerical investigation of the aerodynamic performance of different airfoil configurations for low-speed vertical axis wind turbine applications</div>
             <div class="pub-authors">Ahmed, M. M., <span class="author-me">Faisal, A. K. M.</span>, Shahadat, M. Md. Z., Hossain, G. A., & Masud, M. H.</div>
@@ -501,7 +1012,7 @@
           </li>
 
           <!-- C2. BSME 2026 Glider -->
-          <li class="pub-item" data-type="conference" data-tags="marine, cfd, glider, aerodynamics, hydrodynamics">
+          <li class="pub-item" data-type="conference" data-tags="marine, cfd, glider, aerodynamics, hydrodynamics" data-authors="[&quot;Hossain, G. A.&quot;, &quot;Faisal, A. K. M.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Dabnichki, P.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-conf">Conference Paper</span>
             <div class="pub-title">Design modification of Slocum underwater glider: A numerical approach</div>
             <div class="pub-authors">Hossain, G. A., <span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Dabnichki, P., & Masud, M. H.</div>
@@ -523,7 +1034,7 @@
           </li>
 
           <!-- C3. ICMIME 2024 Blending Airfoils -->
-          <li class="pub-item" data-type="conference" data-tags="cfd, wind energy, vawt, aerodynamics">
+          <li class="pub-item" data-type="conference" data-tags="cfd, wind energy, vawt, aerodynamics" data-authors="[&quot;Faisal, A. K. M.&quot;, &quot;Ankhi, I. J.&quot;, &quot;Hossain, G. A.&quot;, &quot;Masud, M. H.&quot;]">
             <span class="pub-type-badge badge-conf">Conference Paper</span>
             <div class="pub-title">Blending airfoils: An innovative approach to improve the aerodynamic performance of a vertical axis wind turbine</div>
             <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Ankhi, I. J., Hossain, G. A., & Masud, M. H.</div>
@@ -535,7 +1046,7 @@
               <span class="tag-pill">ICMIME</span>
             </div>
             <div class="pub-actions">
-              <span class="btn-action-sm" style="background: #f1f5f9; cursor: default;">📍 Conference Proceeding</span>
+              <span class="btn-action-sm btn-status-proceeding">📍 Conference Proceeding</span>
               <button class="btn-action-sm btn-copy-citation" data-citation="Faisal, A. K. M., Ankhi, I. J., Hossain, G. A., & Masud, M. H. (2024, December 12). Blending airfoils: An innovative approach to improve the aerodynamic performance of a vertical axis wind turbine. 6th ICMIME.">
                 <span>📋 Copy Citation</span>
               </button>
@@ -545,7 +1056,30 @@
         </ul>
       </section>
 
+      </div>
     </div>
+
+    <!-- Right-Hand Interactive Author & Scholar Inspector -->
+    <aside class="pub-inspector-sidebar" id="pubAuthorInspector" aria-label="Author & Scholar Intelligence Panel">
+      <div class="inspector-card">
+        <div class="inspector-header">
+          <div class="inspector-badge">
+            <span class="inspector-pulse-dot"></span>
+            <span>Author Intelligence</span>
+          </div>
+          <span class="inspector-pin-tag" id="inspectorPinTag">📌 Pinned</span>
+          <button class="inspector-close-btn" id="inspectorCloseBtn" title="Reset to preview mode" aria-label="Reset inspector">✕</button>
+        </div>
+
+        <div class="inspector-content" id="inspectorContent">
+          <div class="inspector-empty-state">
+            <div class="empty-icon">👥</div>
+            <h4>Interactive Author Explorer</h4>
+            <p>Hover or click on any publication to inspect the contributing authors and their direct Google Scholar research profiles.</p>
+          </div>
+        </div>
+      </div>
+    </aside>
   </main>
 
   <!-- Global Footer -->
@@ -568,7 +1102,7 @@
     </div>
   </footer>
 
-  <script src="../script.js"></script>
+  <script src="../script.js?v=20260908_namesonly"></script>
 </body>
 
 </html>

@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abu Kaisar Md Faisal | Academic & Research Portfolio</title>
-  <meta name="description" content="Official portfolio of Abu Kaisar Md Faisal — Lecturer in Mechanical Engineering at Khwaja Yunus Ali University (KYAU) and Researcher at CFPEA Lab, RUET." />
-  <meta name="keywords" content="Abu Kaisar Md Faisal, CFD, Aerodynamics, Biomimetics, Airfoil Optimization, RUET, KYAU, Mechanical Engineering" />
+  <meta name="description" content="Official portfolio of Abu Kaisar Md Faisal — Lecturer in Mechanical Engineering at Khwaja Yunus Ali University (KYAU) and CFD Aerodynamics Researcher at CFPEA Lab, RUET." />
+  <meta name="keywords" content="Abu Kaisar Md Faisal, CFD, Aerodynamics, Biomimetics, Airfoil Optimization, RUET, KYAU, Mechanical Engineering, SolidWorks CSWP" />
   <meta name="author" content="Abu Kaisar Md Faisal" />
 
   <!-- OpenGraph / Social Meta Tags -->
@@ -15,14 +15,36 @@
   <meta property="og:image" content="profile.png" />
   <meta property="og:type" content="website" />
 
+  <!-- Google Fonts: Instrument Sans & Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,400&display=swap" />
+
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=20260908_awards_split" />
 </head>
 
 <body>
 
-  <!-- Global Header -->
+  <!-- =========================================================================
+       Fixed Background Scrollytelling Canvas (300-Frame Blueprint Animation)
+       ========================================================================= -->
+  <div class="scrolly-canvas-container" aria-hidden="true">
+    <canvas id="scrollyCanvas"></canvas>
+    <div class="scrolly-canvas-overlay"></div>
+  </div>
+
+  <!-- HUD Frame Scrub Indicator (Fixed Bottom-Left) -->
+  <div class="hud-scrub-indicator">
+    <div class="hud-pulse-dot"></div>
+    <span id="frameCounter">Frame 1/300</span>
+    <span style="opacity: 0.5;">• Scroll to Scrub</span>
+    <button id="btnToggleFocus" class="hud-focus-btn" title="Focus View on Animation">👁️ Focus Video</button>
+  </div>
+
+  <!-- Global Sticky Navigation Header -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-wrapper">
@@ -43,101 +65,124 @@
 
       <nav>
         <ul class="nav-menu" id="navMenu">
-          <li><a href="index.html" class="nav-link active">Home / Research</a></li>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="pages/publications.html" class="nav-link">Publications</a></li>
-          <li><a href="pages/education.html" class="nav-link">Education</a></li>
           <li><a href="pages/experience.html" class="nav-link">Experience</a></li>
-          <li><a href="pages/others.html" class="nav-link">Others</a></li>
-          <li><a href="CV.pdf" class="nav-btn-cv" download>📄 Download CV</a></li>
+          <li><a href="pages/education.html" class="nav-link">Education</a></li>
+          <li><a href="pages/others.html" class="nav-link">3D & Others</a></li>
+          <li><a href="CV.pdf" class="nav-btn-cv" download>📄 CV</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Profile Hero Section -->
-  <section class="profile-hero" id="about">
-    <div class="profile-hero-container">
-      <div class="profile-avatar-wrapper">
-        <img src="profile.png" alt="Abu Kaisar Md Faisal" class="profile-avatar" />
-        <div class="profile-status-badge" title="Active in Research & Academia"></div>
-      </div>
-
-      <div class="profile-details">
-        <h1 class="profile-name">Abu Kaisar Md Faisal</h1>
-        <div class="profile-roles">Lecturer in Mechanical Engineering | CFD & Biomimetic Aerodynamics Researcher</div>
-        
-        <div class="profile-affiliation">
-          <span class="affiliation-item">🏛️ <strong>Khwaja Yunus Ali University (KYAU)</strong></span>
-          <span>•</span>
-          <span class="affiliation-item">🔬 <strong>CFPEA Lab, RUET</strong></span>
-          <span>•</span>
-          <span class="affiliation-item">📍 Sirajganj, Bangladesh</span>
+  <!-- =========================================================================
+       Hero Section (Overlay over Scrollytelling Blueprint Canvas)
+       ========================================================================= -->
+  <section class="hero-scrolly" id="heroSection">
+    <div class="hero-center-content">
+      <!-- Frosted Glass Hero Card (Guarantees Sharp Typography Legibility over Blueprint Canvas) -->
+      <div class="hero-glass-card">
+        <!-- Avatar -->
+        <div class="hero-avatar-wrapper">
+          <img src="profile.png" alt="Abu Kaisar Md Faisal" class="hero-avatar" />
+          <div class="hero-avatar-status" title="Active in Research & Teaching"></div>
         </div>
 
-        <p class="profile-summary-short">
-          Mechanical Engineering educator and fluid dynamics researcher specializing in Computational Fluid Dynamics (CFD), nature-inspired biomimetic aerodynamics, stall-adaptive flow control, and multi-objective optimization. Investigating leading-edge tubercles, corrugated airfoils, Vertical Axis Wind Turbines (VAWT), and autonomous underwater hydrodynamics.
+        <!-- Typographic Headline -->
+        <h1 class="hero-editorial-title">
+          <span>Where fluid dynamics</span>
+          <em>meets mechanical form.</em>
+        </h1>
+
+        <!-- Subtitle Copy -->
+        <p class="hero-editorial-copy">
+          Lecturer in Mechanical Engineering at Khwaja Yunus Ali University (KYAU) &amp; CFD Researcher at CFPEA Lab, RUET. Investigating biomimetic flow control, leading-edge protuberances, and parametric 3D engineering.
         </p>
+      </div>
 
-        <div class="social-action-bar">
-          <div class="social-links-group">
-            <!-- Google Scholar -->
-            <a href="https://scholar.google.com/citations?user=h8IUROQAAAAJ&hl=en" target="_blank" class="social-pill" title="Google Scholar Profile">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar" />
-              <span>Google Scholar</span>
-            </a>
+      <!-- Verified Social Links Strip -->
+      <div class="hero-social-strip">
+        <a href="https://scholar.google.com/citations?user=h8IUROQAAAAJ&hl=en" target="_blank" class="social-pill" title="Google Scholar">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar" />
+          <span>Google Scholar</span>
+        </a>
+        <a href="https://www.researchgate.net/profile/Abu-Kaisar-Md-Faisal?ev=hdr_xprf" target="_blank" class="social-pill" title="ResearchGate">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate" />
+          <span>ResearchGate</span>
+        </a>
+        <a href="https://orcid.org/0009-0003-7363-0695" target="_blank" class="social-pill" title="ORCID">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID" />
+          <span>ORCID</span>
+        </a>
+        <a href="https://www.threads.com/@kaisar.with.kaleidoscope" target="_blank" class="social-pill" title="Threads">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/threads.svg" alt="Threads" />
+          <span>Threads</span>
+        </a>
+        <a href="https://www.facebook.com/kaisar.me.4/" target="_blank" class="social-pill" title="Facebook">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/kaisar.with.kaleidoscope/" target="_blank" class="social-pill" title="Instagram">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+          <span>Instagram</span>
+        </a>
+      </div>
 
-            <!-- ResearchGate -->
-            <a href="https://www.researchgate.net/profile/Abu-Kaisar-Md-Faisal?ev=hdr_xprf" target="_blank" class="social-pill" title="ResearchGate Profile">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate" />
-              <span>ResearchGate</span>
-            </a>
-
-            <!-- ORCID -->
-            <a href="https://orcid.org/0009-0003-7363-0695" target="_blank" class="social-pill" title="ORCID Profile">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID" />
-              <span>ORCID</span>
-            </a>
-
-            <!-- Threads -->
-            <a href="https://www.threads.com/@kaisar.with.kaleidoscope" target="_blank" class="social-pill" title="Threads Profile">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/threads.svg" alt="Threads" />
-              <span>Threads</span>
-            </a>
-
-            <!-- Facebook -->
-            <a href="https://www.facebook.com/kaisar.me.4/" target="_blank" class="social-pill" title="Facebook Profile">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
-              <span>Facebook</span>
-            </a>
-
-            <!-- Instagram -->
-            <a href="https://www.instagram.com/kaisar.with.kaleidoscope/" target="_blank" class="social-pill" title="Instagram Profile">
-              <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
-              <span>Instagram</span>
-            </a>
+      <!-- Dual Specialization Showcase (Twin Bento Pillars: Research & 3D Engineering) -->
+      <div class="dual-pillars-container">
+        <!-- Pillar 1: CFD & Aerodynamics Research -->
+        <div class="pillar-card pillar-research">
+          <div class="pillar-header">
+            <span class="pillar-badge">Track 01 • Academic Research</span>
+            <span class="pillar-icon">🔬</span>
           </div>
+          <h3 class="pillar-title">Biomimetic Flow Control & High-Fidelity CFD</h3>
+          <p class="pillar-desc">
+            Passive flow separation delay, humpback whale leading-edge protuberances (tubercles), and wind turbine aerodynamics via high-resolution RANS/URANS on HPC clusters and wind tunnel validation.
+          </p>
+          <div class="pillar-metrics">
+            <div class="metric-chip"><strong>📄 16</strong> Publications (9 Journals)</div>
+            <div class="metric-chip"><strong>🏆 1st Place</strong> Best Research Paper Award (2025)</div>
+            <div class="metric-chip"><strong>🌪️ High-Performance</strong> ANSYS Fluent, CFX & OpenFOAM</div>
+          </div>
+          <div class="pillar-footer">
+            <a href="pages/publications.html" class="pillar-btn btn-research">Explore 16 Publications & DOIs →</a>
+          </div>
+        </div>
 
-          <div style="display: flex; gap: 0.6rem; align-items: center; margin-left: auto;">
-            <a href="CV.pdf" class="btn-primary" download>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-              <span>Download CV</span>
-            </a>
-            <a href="#contact" class="btn-secondary">
-              <span>Contact</span>
-            </a>
+        <!-- Pillar 2: 3D CAD & Hardware Engineering -->
+        <div class="pillar-card pillar-engineering">
+          <div class="pillar-header">
+            <span class="pillar-badge">Track 02 • Applied Engineering</span>
+            <span class="pillar-icon">⚙️</span>
+          </div>
+          <h3 class="pillar-title">Parametric 3D CAD & Precision Prototypes</h3>
+          <p class="pillar-desc">
+            Bridging fluid physics with certified physical hardware—from SolidWorks mechanism design and Mars Rover suspension dynamics to symmetrical/organic nature-inspired 3D surfaces and IoT systems.
+          </p>
+          <div class="pillar-metrics">
+            <div class="metric-chip"><strong>🏅 CSWP</strong> Certified SolidWorks Professional</div>
+            <div class="metric-chip"><strong>🚀 11th Globally</strong> Mars Rover Suspension (IRDC)</div>
+            <div class="metric-chip"><strong>📐 Precision CAD</strong> SCADR RUET General Secretary</div>
+          </div>
+          <div class="pillar-footer">
+            <a href="pages/others.html" class="pillar-btn btn-engineering">View 3D Work & Certifications →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Multi-Section Grid Layout -->
-  <main class="layout-container layout-grid">
+  <!-- =========================================================================
+       Main Content Layout (Spacious Editorial Flow)
+       ========================================================================= -->
+  <main class="layout-container">
 
     <!-- Left / Center: Main Content Flow -->
     <div class="main-content-flow">
 
-      <!-- Career Summary -->
+      <!-- Career Summary & Research Vision -->
       <section class="content-section" id="career">
         <div class="section-title-wrapper">
           <h2 class="section-title">🧑‍🎓 Career Summary & Research Vision</h2>
@@ -164,13 +209,13 @@
             <div class="timeline-dot"></div>
             <span class="timeline-date">2026</span>
             <div class="timeline-content">
-              Published research on automobile bio-inspired vortex generators in <em>Engineering Research Express</em> (DOI: 10.1088/2631-8695/ae3cde).
+              Published research on automobile bio-inspired vortex generators in <em>Engineering Research Express</em> (<a href="https://doi.org/10.1088/2631-8695/ae3cde" target="_blank">DOI: 10.1088/2631-8695/ae3cde</a>).
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <span class="timeline-date">Aug 2025</span>
+            <span class="timeline-date">AUG 2025</span>
             <div class="timeline-content">
               Appointed as <strong>Lecturer in Mechanical Engineering</strong> at Khwaja Yunus Ali University (KYAU).
             </div>
@@ -188,15 +233,15 @@
             <div class="timeline-dot"></div>
             <span class="timeline-date">2025</span>
             <div class="timeline-content">
-              Published marine biomimicry review in <em>Ocean Engineering</em> (Elsevier) and little penguin wing analysis in <em>IJAE</em>.
+              Published marine biomimicry review in <a href="https://doi.org/10.1016/j.oceaneng.2025.122108" target="_blank"><em>Ocean Engineering</em> (Elsevier)</a> and little penguin wing analysis in <em>IJAE</em>.
             </div>
           </div>
 
           <div class="timeline-item">
             <div class="timeline-dot"></div>
-            <span class="timeline-date">Apr 2024</span>
+            <span class="timeline-date">APR 2024</span>
             <div class="timeline-content">
-              Achieved the <strong>Certified SOLIDWORKS Professional (CSWP)</strong> certification from Dassault Systèmes.
+              Achieved the <strong>Certified SOLIDWORKS Professional (CSWP)</strong> credential from Dassault Systèmes.
             </div>
           </div>
 
@@ -210,7 +255,7 @@
         </div>
       </section>
 
-      <!-- Research Interests -->
+      <!-- Research Themes & Interests -->
       <section class="content-section" id="interests">
         <div class="section-title-wrapper">
           <h2 class="section-title">🔍 Research Interests & Core Themes</h2>
@@ -311,6 +356,116 @@
         </ul>
       </section>
 
+      <!-- Professional Certifications -->
+      <section class="content-section" id="certifications">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">📜 Professional Certifications</h2>
+          <a href="pages/others.html#certifications" class="section-action-link">
+            <span>View All Certifications →</span>
+          </a>
+        </div>
+
+        <p style="margin-bottom: 1.25rem; color: var(--text-secondary); font-size: 0.95rem;">
+          Industry-recognized credentials in CAD design, numerical simulation, automation scripting, and language proficiency:
+        </p>
+
+        <div class="icon-badge-grid">
+          <!-- Item 1: CSWP -->
+          <a href="pages/others.html#certifications" class="icon-badge-card" title="Certified SOLIDWORKS Professional — Mechanical Design">
+            <div class="icon-badge-icon-box">🏅</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Professional</span>
+                <span class="icon-badge-year">Dassault</span>
+              </div>
+              <div class="icon-badge-title">SolidWorks CSWP</div>
+              <div class="icon-badge-desc">Mechanical Design &amp; Complex Assemblies</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Item 2: CSWA -->
+          <a href="pages/others.html#certifications" class="icon-badge-card" title="Certified SOLIDWORKS Associate — Mechanical Design & Additive Mfg">
+            <div class="icon-badge-icon-box">📐</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Associate</span>
+                <span class="icon-badge-year">Dassault</span>
+              </div>
+              <div class="icon-badge-title">SolidWorks CSWA</div>
+              <div class="icon-badge-desc">Mechanical Design &amp; Additive Mfg</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Item 3: Simulation -->
+          <a href="pages/others.html#certifications" class="icon-badge-card" title="CFD & FEA Simulation — VAWT Aerodynamics & FEA Convergence">
+            <div class="icon-badge-icon-box">🌪️</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Simulation</span>
+                <span class="icon-badge-year">CAE</span>
+              </div>
+              <div class="icon-badge-title">CFD &amp; FEA Simulation</div>
+              <div class="icon-badge-desc">Unsteady VAWT Aerodynamics &amp; Mesh FEA</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Item 4: Python Automation -->
+          <a href="pages/others.html#certifications" class="icon-badge-card" title="Google IT Automation with Python Specialization">
+            <div class="icon-badge-icon-box">🐍</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Automation</span>
+                <span class="icon-badge-year">Google</span>
+              </div>
+              <div class="icon-badge-title">Google IT Automation</div>
+              <div class="icon-badge-desc">Python Scripting, Git &amp; System Automation</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Item 5: Deep Learning -->
+          <a href="pages/others.html#certifications" class="icon-badge-card" title="Neural Networks & Deep Learning — deeplearning.ai">
+            <div class="icon-badge-icon-box">🧠</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Deep Learning</span>
+                <span class="icon-badge-year">AI</span>
+              </div>
+              <div class="icon-badge-title">Neural Networks &amp; DL</div>
+              <div class="icon-badge-desc">deeplearning.ai • Vectorized ML Models</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Item 6: IELTS -->
+          <a href="pages/others.html#certifications" class="icon-badge-card" title="IELTS Academic: Band 7.0 — CEFR C1 Competence">
+            <div class="icon-badge-icon-box">🌐</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">CEFR C1</span>
+                <span class="icon-badge-year">IELTS</span>
+              </div>
+              <div class="icon-badge-title">IELTS Academic: Band 7.0</div>
+              <div class="icon-badge-desc">L: 7.5 | R: 7.5 | W: 6.5 | S: 6.0</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+        </div>
+
+        <!-- Call to Action Banner to Specific Tab -->
+        <div style="margin-top: 1.25rem; padding: 0.9rem 1.2rem; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.22); border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="font-size: 0.88rem; color: #e2e8f0;">
+            🛠️ <strong>Looking for full hardware projects, 3D models &amp; license credentials?</strong>
+          </div>
+          <a href="pages/others.html#certifications" class="section-action-link" style="font-weight: 700;">
+            View Detailed Records on 3D &amp; Others Tab →
+          </a>
+        </div>
+      </section>
+
       <!-- Academic & Leadership Experience -->
       <section class="content-section" id="experiences">
         <div class="section-title-wrapper">
@@ -405,51 +560,7 @@
             <span class="edu-exp-date">2017 – 2019</span>
           </div>
           <div class="edu-exp-body">
-            <p><strong>Result:</strong> GPA 5.00 / 5.00 (Golden A+)</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Applied Engineering Projects -->
-      <section class="content-section" id="projects">
-        <div class="section-title-wrapper">
-          <h2 class="section-title">📑 Applied Engineering & Hardware Projects</h2>
-          <a href="pages/others.html" class="section-action-link">
-            <span>View Project Details →</span>
-          </a>
-        </div>
-
-        <div class="research-grid">
-          <div class="research-card">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;">SEP 2025</div>
-            <h3 class="research-card-title">IoT Environmental Sensing Modules</h3>
-            <p class="research-card-desc">
-              Rechargeable IoT modules with precision sensors for Temperature, Humidity, $\text{CO}_2$, and $\text{O}_2$ with cloud telemetry.
-            </p>
-          </div>
-
-          <div class="research-card">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;">MAY 2024</div>
-            <h3 class="research-card-title">Thermal Mapping of Convection via ESP32</h3>
-            <p class="research-card-desc">
-              Multi-point sensor array for real-time spatial thermal mapping of buoyancy-driven fluid convection in water.
-            </p>
-          </div>
-
-          <div class="research-card">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;">MAR 2023 – AUG 2023</div>
-            <h3 class="research-card-title">Automated Liquid Level & Thermal Regulation</h3>
-            <p class="research-card-desc">
-              Arduino UNO closed-loop control system for automated liquid level monitoring and thermal stabilization.
-            </p>
-          </div>
-
-          <div class="research-card">
-            <div style="font-size: 0.78rem; font-weight: 700; color: var(--accent); margin-bottom: 0.25rem;">JUN 2023</div>
-            <h3 class="research-card-title">PET Filament from Plastic Bottles</h3>
-            <p class="research-card-desc">
-              Custom thermal extrusion pulling mechanism recycling consumer plastic bottles into 3D printing filament.
-            </p>
+            <p><strong>Result:</strong> GPA 5.00 / 5.00 (Golden A+) | College Prefect (2018), Excellent Discipline Award</p>
           </div>
         </div>
       </section>
@@ -523,23 +634,104 @@
         </div>
       </section>
 
-      <!-- Awards & Honors -->
+      <!-- Honors & Research Awards -->
       <section class="content-section" id="awards">
         <div class="section-title-wrapper">
-          <h2 class="section-title">🏆 Awards & Certifications</h2>
-          <a href="pages/others.html" class="section-action-link">
-            <span>View All Certifications →</span>
+          <h2 class="section-title">🏆 Honors &amp; Research Awards</h2>
+          <a href="pages/others.html#honors-awards" class="section-action-link">
+            <span>View All Honors &amp; Awards →</span>
           </a>
         </div>
 
-        <ul style="padding-left: 1.25rem; color: var(--text-secondary);">
-          <li style="margin-bottom: 0.6rem;"><strong>1st Place — Best Research Publication Award (2025):</strong> Faculty of Mechanical Engineering, RUET.</li>
-          <li style="margin-bottom: 0.6rem;"><strong>1st Place — Best Research Publication Award (2025):</strong> Department of Mechanical Engineering, RUET.</li>
-          <li style="margin-bottom: 0.6rem;"><strong>Certified SOLIDWORKS Professional (CSWP) & Associate (CSWA):</strong> Mechanical Design, Additive Manufacturing.</li>
-          <li style="margin-bottom: 0.6rem;"><strong>2nd Place — Techmayhem CAD Design Competition (2023):</strong> RUET.</li>
-          <li style="margin-bottom: 0.6rem;"><strong>11th Place Globally (2023):</strong> International Rover Design Challenge (IRDC), Mars Society South Asia.</li>
-          <li style="margin-bottom: 0.6rem;"><strong>Merit-Based Scholarships (2021–2023):</strong> Rajshahi University of Engineering & Technology.</li>
-        </ul>
+        <p style="margin-bottom: 1.25rem; color: var(--text-secondary); font-size: 0.95rem;">
+          Competitive achievements, academic publication distinctions, and university merit recognitions:
+        </p>
+
+        <div class="icon-badge-grid">
+          <!-- Award 1: Best Publication Faculty -->
+          <a href="pages/others.html#honors-awards" class="icon-badge-card" title="1st Place — Best Research Publication Award (2025), Faculty of Mechanical Engineering, RUET">
+            <div class="icon-badge-icon-box">🥇</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">1st Place</span>
+                <span class="icon-badge-year">2025</span>
+              </div>
+              <div class="icon-badge-title">Best Publication Award</div>
+              <div class="icon-badge-desc">Faculty of Mechanical Engineering, RUET</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Award 2: Best Publication Dept -->
+          <a href="pages/others.html#honors-awards" class="icon-badge-card" title="1st Place — Best Research Publication Award (2025), Department of Mechanical Engineering, RUET">
+            <div class="icon-badge-icon-box">🏆</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">1st Place</span>
+                <span class="icon-badge-year">2025</span>
+              </div>
+              <div class="icon-badge-title">Best Publication Award</div>
+              <div class="icon-badge-desc">Department of Mechanical Engineering, RUET</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Award 3: Techmayhem CAD -->
+          <a href="pages/others.html#honors-awards" class="icon-badge-card" title="2nd Place — Techmayhem CAD Design Competition (2023), RUET">
+            <div class="icon-badge-icon-box">🥈</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Runner-Up</span>
+                <span class="icon-badge-year">2023</span>
+              </div>
+              <div class="icon-badge-title">Techmayhem CAD Design</div>
+              <div class="icon-badge-desc">2nd Place • RUET CAD Design Competition</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Award 4: IRDC Mars Rover -->
+          <a href="pages/others.html#honors-awards" class="icon-badge-card" title="11th Place Globally — International Rover Design Challenge (2023), Mars Society South Asia">
+            <div class="icon-badge-icon-box">🚀</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Global Top 11</span>
+                <span class="icon-badge-year">2023</span>
+              </div>
+              <div class="icon-badge-title">Intl Rover Design Challenge</div>
+              <div class="icon-badge-desc">Mars Society South Asia • Team Ogrodoot</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Award 5: Merit Scholarships -->
+          <a href="pages/others.html#honors-awards" class="icon-badge-card" title="Merit-Based Scholarships (2021–2023), Rajshahi University of Engineering & Technology">
+            <div class="icon-badge-icon-box">🎓</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Academic Merit</span>
+                <span class="icon-badge-year">2021–23</span>
+              </div>
+              <div class="icon-badge-title">RUET Merit Scholarships</div>
+              <div class="icon-badge-desc">Dean's List Recognition for Academic Excellence</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+
+          <!-- Award 6: Programming Contest -->
+          <a href="pages/others.html#honors-awards" class="icon-badge-card" title="1st Place (Regional, 2017) — National High School Programming Competition (NHSPC)">
+            <div class="icon-badge-icon-box">💻</div>
+            <div class="icon-badge-info">
+              <div class="icon-badge-header">
+                <span class="icon-badge-tag">Champion</span>
+                <span class="icon-badge-year">2017</span>
+              </div>
+              <div class="icon-badge-title">National High School Contest</div>
+              <div class="icon-badge-desc">1st Place Regional • ICT Division, Bangladesh</div>
+            </div>
+            <div class="icon-badge-arrow">→</div>
+          </a>
+        </div>
       </section>
 
       <!-- Contact Section -->
@@ -550,9 +742,9 @@
 
         <p>I welcome academic discussions, prospective research collaborations, and inquiries:</p>
 
-        <div style="background: var(--bg-card-alt); border-radius: var(--radius-sm); padding: 1.25rem; border: 1px solid var(--border-light); margin-top: 1rem;">
-          <p style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.2rem;">Abu Kaisar Md Faisal</p>
-          <p style="color: var(--accent); font-weight: 600; margin-bottom: 0.4rem;">Lecturer, Department of Mechanical Engineering</p>
+        <div style="background: var(--bg-surface-alt); border-radius: var(--radius-sm); padding: 1.25rem; border: 1px solid var(--border-subtle); margin-top: 1rem;">
+          <p style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem;">Abu Kaisar Md Faisal</p>
+          <p style="color: var(--primary-accent); font-weight: 600; margin-bottom: 0.4rem;">Lecturer, Department of Mechanical Engineering</p>
           <p style="color: var(--text-secondary); margin-bottom: 0.2rem;">Khwaja Yunus Ali University (KYAU)</p>
           <p style="color: var(--text-secondary); margin-bottom: 0.8rem;">Enayetpur, Sirajganj, Bangladesh</p>
           
@@ -578,33 +770,22 @@
       </section>
 
     </div>
-
-    <!-- Right Sidebar: Non-Overlapping Sticky Table of Contents -->
-    <aside class="sidebar-toc">
-      <div class="toc-header">
-        <span>📑 Page Navigation</span>
-      </div>
-      <ul class="toc-nav-list">
-        <li><a href="#about" class="toc-nav-link active">About & Bio</a></li>
-        <li><a href="#career" class="toc-nav-link">Career Summary</a></li>
-        <li><a href="#news" class="toc-nav-link">News & Updates</a></li>
-        <li><a href="#interests" class="toc-nav-link">Research Interests</a></li>
-        <li><a href="#publications" class="toc-nav-link">Featured Publications</a></li>
-        <li><a href="#experiences" class="toc-nav-link">Experience</a></li>
-        <li><a href="#education" class="toc-nav-link">Education</a></li>
-        <li><a href="#projects" class="toc-nav-link">Hardware Projects</a></li>
-        <li><a href="#skills" class="toc-nav-link">Technical Skills</a></li>
-        <li><a href="#awards" class="toc-nav-link">Awards & Certifications</a></li>
-        <li><a href="#contact" class="toc-nav-link">Contact</a></li>
-      </ul>
-      <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px dashed var(--border-light); text-align: center;">
-        <a href="CV.pdf" class="btn-primary" style="width: 100%; justify-content: center; font-size: 0.88rem;" download>
-          📄 Download Full CV
-        </a>
-      </div>
-    </aside>
-
   </main>
+
+  <!-- Floating Section Rail (Apple-Style Minimal Right-Edge Navigation) -->
+  <nav class="floating-nav-rail" id="floatingNavRail" aria-label="Page Sections Navigation">
+    <a href="#heroSection" class="nav-dot active" data-title="About & Bio" aria-label="About & Bio"></a>
+    <a href="#career" class="nav-dot" data-title="Career Summary" aria-label="Career Summary"></a>
+    <a href="#news" class="nav-dot" data-title="News & Updates" aria-label="News & Updates"></a>
+    <a href="#interests" class="nav-dot" data-title="Research Themes" aria-label="Research Themes"></a>
+    <a href="#publications" class="nav-dot" data-title="Publications" aria-label="Featured Publications"></a>
+    <a href="#certifications" class="nav-dot" data-title="Certifications" aria-label="Professional Certifications"></a>
+    <a href="#experiences" class="nav-dot" data-title="Experience" aria-label="Academic Experience"></a>
+    <a href="#education" class="nav-dot" data-title="Education" aria-label="Academic Education"></a>
+    <a href="#skills" class="nav-dot" data-title="Technical Skills" aria-label="Technical Skills Matrix"></a>
+    <a href="#awards" class="nav-dot" data-title="Awards & Honors" aria-label="Honors & Research Awards"></a>
+    <a href="#contact" class="nav-dot" data-title="Contact" aria-label="Contact Information"></a>
+  </nav>
 
   <!-- Global Footer -->
   <footer class="site-footer">

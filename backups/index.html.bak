@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abu Kaisar Md Faisal | Academic & Research Portfolio</title>
+  <meta name="description" content="Official portfolio of Abu Kaisar Md Faisal — Lecturer in Mechanical Engineering at Khwaja Yunus Ali University (KYAU) and CFD Aerodynamics Researcher at CFPEA Lab, RUET." />
+  <meta name="keywords" content="Abu Kaisar Md Faisal, CFD, Aerodynamics, Biomimetics, Airfoil Optimization, RUET, KYAU, Mechanical Engineering, SolidWorks CSWP" />
+  <meta name="author" content="Abu Kaisar Md Faisal" />
+
+  <!-- OpenGraph / Social Meta Tags -->
+  <meta property="og:title" content="Abu Kaisar Md Faisal | Academic & Research Portfolio" />
+  <meta property="og:description" content="Lecturer in Mechanical Engineering (KYAU) & CFD Aerodynamics Researcher (CFPEA Lab, RUET). Specializing in biomimetic flow control, airfoil optimization, and renewable energy." />
+  <meta property="og:image" content="profile.png" />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Instrument Sans & Newsreader -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@1,400&display=swap" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="style.css?v=20260908_toolbar" />
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       Fixed Background Scrollytelling Canvas (300-Frame Blueprint Animation)
+       ========================================================================= -->
+  <div class="scrolly-canvas-container" aria-hidden="true">
+    <canvas id="scrollyCanvas"></canvas>
+    <div class="scrolly-canvas-overlay"></div>
+  </div>
+
+  <!-- HUD Frame Scrub Indicator (Fixed Bottom-Left) -->
+  <div class="hud-scrub-indicator">
+    <div class="hud-pulse-dot"></div>
+    <span id="frameCounter">Frame 1/300</span>
+    <span style="opacity: 0.5;">• Scroll to Scrub</span>
+    <button id="btnToggleFocus" class="hud-focus-btn" title="Focus View on Animation">👁️ Focus Video</button>
+  </div>
+
+  <!-- Global Sticky Navigation Header -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html" class="brand-wrapper">
+        <div class="brand-monogram">AK</div>
+        <div class="brand-text">
+          <span class="brand-name">Abu Kaisar Md Faisal</span>
+          <span class="brand-tagline">Lecturer & Aerodynamics Researcher</span>
+        </div>
+      </a>
+
+      <button class="menu-toggle-btn" id="menuToggle" aria-label="Toggle navigation menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="pages/publications.html" class="nav-link">Publications</a></li>
+          <li><a href="pages/experience.html" class="nav-link">Experience</a></li>
+          <li><a href="pages/education.html" class="nav-link">Education</a></li>
+          <li><a href="pages/others.html" class="nav-link">3D & Others</a></li>
+          <li><a href="CV.pdf" class="nav-btn-cv" download>📄 CV</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Hero Section (Overlay over Scrollytelling Blueprint Canvas)
+       ========================================================================= -->
+  <section class="hero-scrolly" id="heroSection">
+    <div class="hero-center-content">
+      <!-- Frosted Glass Hero Card (Guarantees Sharp Typography Legibility over Blueprint Canvas) -->
+      <div class="hero-glass-card">
+        <!-- Avatar -->
+        <div class="hero-avatar-wrapper">
+          <img src="profile.png" alt="Abu Kaisar Md Faisal" class="hero-avatar" />
+          <div class="hero-avatar-status" title="Active in Research & Teaching"></div>
+        </div>
+
+        <!-- Typographic Headline -->
+        <h1 class="hero-editorial-title">
+          <span>Where fluid dynamics</span>
+          <em>meets mechanical form.</em>
+        </h1>
+
+        <!-- Subtitle Copy -->
+        <p class="hero-editorial-copy">
+          Lecturer in Mechanical Engineering at Khwaja Yunus Ali University (KYAU) &amp; CFD Researcher at CFPEA Lab, RUET. Investigating biomimetic flow control, leading-edge protuberances, and parametric 3D engineering.
+        </p>
+      </div>
+
+      <!-- Verified Social Links Strip -->
+      <div class="hero-social-strip">
+        <a href="https://scholar.google.com/citations?user=h8IUROQAAAAJ&hl=en" target="_blank" class="social-pill" title="Google Scholar">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googlescholar.svg" alt="Google Scholar" />
+          <span>Google Scholar</span>
+        </a>
+        <a href="https://www.researchgate.net/profile/Abu-Kaisar-Md-Faisal?ev=hdr_xprf" target="_blank" class="social-pill" title="ResearchGate">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/researchgate.svg" alt="ResearchGate" />
+          <span>ResearchGate</span>
+        </a>
+        <a href="https://orcid.org/0009-0003-7363-0695" target="_blank" class="social-pill" title="ORCID">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/orcid.svg" alt="ORCID" />
+          <span>ORCID</span>
+        </a>
+        <a href="https://www.threads.com/@kaisar.with.kaleidoscope" target="_blank" class="social-pill" title="Threads">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/threads.svg" alt="Threads" />
+          <span>Threads</span>
+        </a>
+        <a href="https://www.facebook.com/kaisar.me.4/" target="_blank" class="social-pill" title="Facebook">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+          <span>Facebook</span>
+        </a>
+        <a href="https://www.instagram.com/kaisar.with.kaleidoscope/" target="_blank" class="social-pill" title="Instagram">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+          <span>Instagram</span>
+        </a>
+      </div>
+
+      <!-- Dual Specialization Showcase (Twin Bento Pillars: Research & 3D Engineering) -->
+      <div class="dual-pillars-container">
+        <!-- Pillar 1: CFD & Aerodynamics Research -->
+        <div class="pillar-card pillar-research">
+          <div class="pillar-header">
+            <span class="pillar-badge">Track 01 • Academic Research</span>
+            <span class="pillar-icon">🔬</span>
+          </div>
+          <h3 class="pillar-title">Biomimetic Flow Control & High-Fidelity CFD</h3>
+          <p class="pillar-desc">
+            Passive flow separation delay, humpback whale leading-edge protuberances (tubercles), and wind turbine aerodynamics via high-resolution RANS/URANS on HPC clusters and wind tunnel validation.
+          </p>
+          <div class="pillar-metrics">
+            <div class="metric-chip"><strong>📄 16</strong> Publications (9 Journals)</div>
+            <div class="metric-chip"><strong>🏆 1st Place</strong> Best Research Paper Award (2025)</div>
+            <div class="metric-chip"><strong>🌪️ High-Performance</strong> ANSYS Fluent, CFX & OpenFOAM</div>
+          </div>
+          <div class="pillar-footer">
+            <a href="pages/publications.html" class="pillar-btn btn-research">Explore 16 Publications & DOIs →</a>
+          </div>
+        </div>
+
+        <!-- Pillar 2: 3D CAD & Hardware Engineering -->
+        <div class="pillar-card pillar-engineering">
+          <div class="pillar-header">
+            <span class="pillar-badge">Track 02 • Applied Engineering</span>
+            <span class="pillar-icon">⚙️</span>
+          </div>
+          <h3 class="pillar-title">Parametric 3D CAD & Precision Prototypes</h3>
+          <p class="pillar-desc">
+            Bridging fluid physics with certified physical hardware—from SolidWorks mechanism design and Mars Rover suspension dynamics to symmetrical/organic nature-inspired 3D surfaces and IoT systems.
+          </p>
+          <div class="pillar-metrics">
+            <div class="metric-chip"><strong>🏅 CSWP</strong> Certified SolidWorks Professional</div>
+            <div class="metric-chip"><strong>🚀 11th Globally</strong> Mars Rover Suspension (IRDC)</div>
+            <div class="metric-chip"><strong>📐 Precision CAD</strong> SCADR RUET General Secretary</div>
+          </div>
+          <div class="pillar-footer">
+            <a href="pages/others.html" class="pillar-btn btn-engineering">View 3D Work & Certifications →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       Main Content Layout (Spacious Editorial Flow)
+       ========================================================================= -->
+  <main class="layout-container">
+
+    <!-- Left / Center: Main Content Flow -->
+    <div class="main-content-flow">
+
+      <!-- Career Summary & Research Vision -->
+      <section class="content-section" id="career">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🧑‍🎓 Career Summary & Research Vision</h2>
+        </div>
+        <p>
+          Abu Kaisar Md Faisal is a Lecturer in Mechanical Engineering at Khwaja Yunus Ali University (KYAU), Bangladesh, and an active researcher at the <strong>Computational Flow Physics & Experimental Aerodynamics (CFPEA) Lab</strong>, Rajshahi University of Engineering & Technology (RUET), under the supervision of Dr. Mahadi Hasan Masud.
+        </p>
+        <p>
+          His research integrates <strong>high-fidelity numerical simulations (CFD)</strong>, <strong>surrogate modeling (RSM & Genetic Algorithms)</strong>, and <strong>subsonic wind tunnel validation</strong> to design next-generation aerodynamic systems. He investigates how nature-inspired surface modifications—such as humpback whale tubercle protuberances, penguin wing kinematics, and corrugated dragonfly cross-sections—can suppress boundary layer separation and postpone stall.
+        </p>
+        <p>
+          He has contributed to 9 peer-reviewed journal publications, 4 book chapters with Elsevier and Springer Nature, and 3 international conference proceedings, with research appearing in top-tier journals including <em>Physics of Fluids</em>, <em>Ocean Engineering</em>, and <em>Journal of Cleaner Production</em>.
+        </p>
+      </section>
+
+      <!-- News & Updates -->
+      <section class="content-section" id="news">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">📰 News & Recent Updates</h2>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2026</span>
+            <div class="timeline-content">
+              Published research on automobile bio-inspired vortex generators in <em>Engineering Research Express</em> (<a href="https://doi.org/10.1088/2631-8695/ae3cde" target="_blank">DOI: 10.1088/2631-8695/ae3cde</a>).
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">AUG 2025</span>
+            <div class="timeline-content">
+              Appointed as <strong>Lecturer in Mechanical Engineering</strong> at Khwaja Yunus Ali University (KYAU).
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2025</span>
+            <div class="timeline-content">
+              Received <strong>1st Place — Best Research Publication Award</strong> from both the Faculty and Department of Mechanical Engineering, RUET.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2025</span>
+            <div class="timeline-content">
+              Published marine biomimicry review in <a href="https://doi.org/10.1016/j.oceaneng.2025.122108" target="_blank"><em>Ocean Engineering</em> (Elsevier)</a> and little penguin wing analysis in <em>IJAE</em>.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">APR 2024</span>
+            <div class="timeline-content">
+              Achieved the <strong>Certified SOLIDWORKS Professional (CSWP)</strong> credential from Dassault Systèmes.
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <span class="timeline-date">2023</span>
+            <div class="timeline-content">
+              Team Ogrodoot achieved <strong>11th Place Globally</strong> in the International Rover Design Challenge (IRDC 2023).
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research Themes & Interests -->
+      <section class="content-section" id="interests">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🔍 Research Interests & Core Themes</h2>
+        </div>
+
+        <div class="research-grid">
+          <div class="research-card">
+            <div class="research-card-icon">🌪️</div>
+            <h3 class="research-card-title">Biomimetic Aerodynamics</h3>
+            <p class="research-card-desc">Leading-edge protuberances, tubercle-modified airfoils, corrugated wing sections, and vortex generators inspired by marine biology and avian kinematics.</p>
+          </div>
+
+          <div class="research-card">
+            <div class="research-card-icon">💻</div>
+            <h3 class="research-card-title">Computational Fluid Dynamics</h3>
+            <p class="research-card-desc">High-resolution RANS (SST $k-\omega$, Transition SST) and URANS simulations utilizing ANSYS Fluent, CFX, and OpenFOAM running on HPC clusters.</p>
+          </div>
+
+          <div class="research-card">
+            <div class="research-card-icon">📈</div>
+            <h3 class="research-card-title">Aerodynamic Optimization</h3>
+            <p class="research-card-desc">Design of Experiments (DOE), Response Surface Methodology (RSM), Genetic Algorithms, and surrogate modeling for multi-objective aerodynamic design.</p>
+          </div>
+
+          <div class="research-card">
+            <div class="research-card-icon">💨</div>
+            <h3 class="research-card-title">Wind Turbine Aerodynamics</h3>
+            <p class="research-card-desc">Airfoil blending and flow control for low-speed Vertical Axis Wind Turbines (VAWTs) to elevate starting torque and aerodynamic power coefficients.</p>
+          </div>
+
+          <div class="research-card">
+            <div class="research-card-icon">🌊</div>
+            <h3 class="research-card-title">Marine Hydrodynamics</h3>
+            <p class="research-card-desc">Hydrodynamic drag reduction, hull form modifications, and flow visualization for autonomous Slocum underwater gliders.</p>
+          </div>
+
+          <div class="research-card">
+            <div class="research-card-icon">♻️</div>
+            <h3 class="research-card-title">Sustainable Energy & E-Waste</h3>
+            <p class="research-card-desc">Material flow analysis, environmental risk assessment of e-waste recycling, and municipal solid waste-to-energy conversion systems.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Publications -->
+      <section class="content-section" id="publications">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">📄 Featured Publications</h2>
+          <a href="pages/publications.html" class="section-action-link">
+            <span>View All 16 Records & BibTeX →</span>
+          </a>
+        </div>
+
+        <ul class="pub-list">
+          <!-- Featured 1 -->
+          <li class="pub-item" data-type="journal">
+            <span class="pub-type-badge badge-journal">Journal Article (Under Review)</span>
+            <div class="pub-title">Optimizing Leading-Edge Protuberances for Enhanced Post-Stall Performance of a Bio-Inspired Wing</div>
+            <div class="pub-authors"><span class="author-me">Faisal, A. K. M.</span>, Hasan Masud, M., Ankhi, I. J., Siddhpura, M., Siddhpura, A., & Dangol, S. R.</div>
+            <div class="pub-venue">International Journal of Computational Fluid Dynamics, 2026</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span><span class="tag-pill">Protuberances</span><span class="tag-pill">Post-Stall</span>
+            </div>
+            <div class="pub-actions">
+              <a href="pages/publications.html" class="btn-action-sm">📄 View in Publications</a>
+            </div>
+          </li>
+
+          <!-- Featured 2 -->
+          <li class="pub-item" data-type="journal">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Aerodynamic Performance of Bio-inspired Vortex Generator on Automobiles</div>
+            <div class="pub-authors">Saimoon, N. Z., Hasan Masud, M., Salehin, N., Alam, Md. M., <span class="author-me">Faisal, A. K. M.</span>, & Rabiul, M.</div>
+            <div class="pub-venue">Engineering Research Express, 2026 (IOP Publishing)</div>
+            <div class="pub-tags">
+              <span class="tag-pill">CFD</span><span class="tag-pill">Biomimetics</span><span class="tag-pill">Vortex Generator</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1088/2631-8695/ae3cde" target="_blank" class="btn-action-sm">🔗 DOI: 10.1088/2631-8695/ae3cde</a>
+              <a href="pages/publications.html" class="btn-action-sm">📄 View in Publications</a>
+            </div>
+          </li>
+
+          <!-- Featured 3 -->
+          <li class="pub-item" data-type="journal">
+            <span class="pub-type-badge badge-journal">Journal Article</span>
+            <div class="pub-title">Translating marine biology into engineering: A review of biomimicry and its applications</div>
+            <div class="pub-authors">Masud, M. H., Ankhi, I. J., <span class="author-me">Faisal, A. K. M.</span>, & Alam, Md. M.</div>
+            <div class="pub-venue">Ocean Engineering, 339, 122108, 2025 (Elsevier)</div>
+            <div class="pub-tags">
+              <span class="tag-pill">Marine</span><span class="tag-pill">Biomimetics</span><span class="tag-pill">Elsevier</span>
+            </div>
+            <div class="pub-actions">
+              <a href="https://doi.org/10.1016/j.oceaneng.2025.122108" target="_blank" class="btn-action-sm">🔗 DOI: 10.1016/j.oceaneng.2025.122108</a>
+              <a href="pages/publications.html" class="btn-action-sm">📄 View in Publications</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Professional Certifications & Key Credentials -->
+      <section class="content-section" id="certifications">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">📜 Professional Certifications & Key Credentials</h2>
+          <a href="pages/others.html" class="section-action-link">
+            <span>View Full Details & Project Files →</span>
+          </a>
+        </div>
+
+        <p style="margin-bottom: 1.5rem; color: var(--text-secondary);">
+          Industry credentials in computer-aided design, advanced fluid/structural simulation, automation programming, and certified English language proficiency:
+        </p>
+
+        <div class="skills-matrix">
+          <!-- Card 1: SolidWorks & Dassault Systèmes -->
+          <div class="skill-category-card">
+            <div class="skill-category-title">
+              <span>🏅</span>
+              <span>SolidWorks & Design (Dassault Systèmes)</span>
+            </div>
+            <ul style="padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              <li style="margin-bottom: 0.4rem;"><strong style="color: #ffffff;">Certified SOLIDWORKS Professional (CSWP)</strong> — Mechanical Design</li>
+              <li style="margin-bottom: 0.4rem;"><strong style="color: #ffffff;">Certified SOLIDWORKS Associate (CSWA)</strong> — Mechanical Design, Additive Mfg &amp; Sustainability</li>
+              <li style="margin-bottom: 0.4rem;">Certified 3DSwymer Associate</li>
+              <li>Autodesk CAD/CAM/CAE for Mechanical Engineering</li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Simulation (CFD & FEA) -->
+          <div class="skill-category-card">
+            <div class="skill-category-title">
+              <span>🌪️</span>
+              <span>Simulation (CFD &amp; FEA)</span>
+            </div>
+            <ul style="padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              <li style="margin-bottom: 0.4rem;"><strong style="color: #ffffff;">Mastering Unsteady CFD</strong> of Vertical Axis Wind Turbine (VAWT)</li>
+              <li style="margin-bottom: 0.4rem;"><strong style="color: #ffffff;">Computational Fluid Mechanics</strong> — Airflow Around Spoiler &amp; Pump Simulation</li>
+              <li><strong style="color: #ffffff;">FEM &amp; FEA Convergence</strong> — Linear, Nonlinear Analysis &amp; Mesh Independence</li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Programming & Automation -->
+          <div class="skill-category-card">
+            <div class="skill-category-title">
+              <span>🐍</span>
+              <span>Programming &amp; Automation</span>
+            </div>
+            <ul style="padding-left: 1.2rem; font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6;">
+              <li style="margin-bottom: 0.4rem;"><strong style="color: #ffffff;">Google IT Automation with Python</strong> Specialization</li>
+              <li style="margin-bottom: 0.4rem;"><strong style="color: #ffffff;">Neural Networks &amp; Deep Learning</strong> (deeplearning.ai)</li>
+              <li style="margin-bottom: 0.4rem;">Python 3 Programming Specialization (Coursera)</li>
+              <li>Python for Everybody Specialization (Coursera)</li>
+            </ul>
+          </div>
+
+          <!-- Card 4: Language Proficiency -->
+          <div class="skill-category-card">
+            <div class="skill-category-title">
+              <span>🌐</span>
+              <span>Language Proficiency</span>
+            </div>
+            <div style="font-size: 0.95rem; color: #ffffff; margin-bottom: 0.35rem; font-weight: 600;">
+              IELTS Academic: Band 7.0 <span style="font-size: 0.8rem; color: var(--primary-accent); font-weight: 500;">(CEFR C1 Competence)</span>
+            </div>
+            <div style="font-size: 0.84rem; color: var(--text-secondary); margin-bottom: 0.5rem; line-height: 1.5;">
+              Listening: <strong style="color: #ffffff;">7.5</strong> | Reading: <strong style="color: #ffffff;">7.5</strong> | Writing: <strong style="color: #ffffff;">6.5</strong> | Speaking: <strong style="color: #ffffff;">6.0</strong>
+            </div>
+            <p style="font-size: 0.86rem; color: var(--text-secondary);">
+              <strong>Bengali:</strong> Native Proficiency
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action Banner to Specific Tab -->
+        <div style="margin-top: 1.5rem; padding: 1.1rem 1.4rem; background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-xs); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
+          <div style="font-size: 0.9rem; color: #e2e8f0;">
+            🛠️ <strong>Looking for full hardware projects, Mars Rover mechanics &amp; 3D modeling details?</strong>
+          </div>
+          <a href="pages/others.html" class="pillar-btn" style="width: auto; padding: 0.5rem 1.25rem;">
+            Go to 3D &amp; Others Tab for Full Details →
+          </a>
+        </div>
+      </section>
+
+      <!-- Academic & Leadership Experience -->
+      <section class="content-section" id="experiences">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🏛️ Academic & Leadership Experience</h2>
+          <a href="pages/experience.html" class="section-action-link">
+            <span>View Full Experience Record →</span>
+          </a>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Lecturer in Mechanical Engineering</div>
+              <div class="edu-exp-institution">Khwaja Yunus Ali University (KYAU), Sirajganj, Bangladesh</div>
+            </div>
+            <span class="edu-exp-date">August 2025 – Present</span>
+          </div>
+          <div class="edu-exp-body">
+            Delivering lectures and laboratory instruction in Mechanical Engineering. Supervised student courses in production process optimization, CAD, and FEM.
+          </div>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Undergraduate Researcher</div>
+              <div class="edu-exp-institution">Computational Flow Physics & Experimental Aerodynamics (CFPEA) Lab, RUET</div>
+            </div>
+            <span class="edu-exp-date">June 2023 – Present</span>
+          </div>
+          <div class="edu-exp-body">
+            PI: Dr. Mahadi Hasan Masud. Conducting high-fidelity CFD simulations, wind tunnel experiments, and surrogate optimization on biomimetic flow control.
+          </div>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">General Secretary</div>
+              <div class="edu-exp-institution">Society of Computer Aided Designers (SCADR), RUET</div>
+            </div>
+            <span class="edu-exp-date">May 2024 – July 2025</span>
+          </div>
+          <div class="edu-exp-body">
+            Organized CAD & 3D-Printing workshops for 180+ participants; trained 120+ students in SolidWorks and ANSYS.
+          </div>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Mechanical Designer — Team Ogrodoot (RSR)</div>
+              <div class="edu-exp-institution">Rajshahi University of Engineering & Technology (RUET)</div>
+            </div>
+            <span class="edu-exp-date">Dec 2022 – Dec 2024</span>
+          </div>
+          <div class="edu-exp-body">
+            Designed rover suspension and wheel mechanics. <strong>11th Place Globally</strong> in the 2023 International Rover Design Challenge (IRDC).
+          </div>
+        </div>
+      </section>
+
+      <!-- Academic Education -->
+      <section class="content-section" id="education">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🎓 Academic Education</h2>
+          <a href="pages/education.html" class="section-action-link">
+            <span>View Full Details & Coursework →</span>
+          </a>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">B.Sc. in Mechanical Engineering</div>
+              <div class="edu-exp-institution">Rajshahi University of Engineering & Technology (RUET), Bangladesh</div>
+            </div>
+            <span class="edu-exp-date">Jan 2020 – July 2025</span>
+          </div>
+          <div class="edu-exp-body">
+            <p><strong>Cumulative GPA:</strong> 3.83 / 4.00</p>
+            <p><strong>Undergraduate Thesis:</strong> <em>Stall-Adaptive Aerofoil: Numerical and Experimental Optimization of Dimpled and Leading-Edge Protuberance Surfaces</em></p>
+          </div>
+        </div>
+
+        <div class="edu-exp-card">
+          <div class="edu-exp-header">
+            <div>
+              <div class="edu-exp-title">Higher Secondary Certificate (H.S.C.) — Science</div>
+              <div class="edu-exp-institution">Ispahani Public School & College, Cumilla</div>
+            </div>
+            <span class="edu-exp-date">2017 – 2019</span>
+          </div>
+          <div class="edu-exp-body">
+            <p><strong>Result:</strong> GPA 5.00 / 5.00 (Golden A+) | College Prefect (2018), Excellent Discipline Award</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Skills Matrix -->
+      <section class="content-section" id="skills">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🧠 Technical Skills Matrix</h2>
+        </div>
+
+        <div class="skills-matrix">
+          <div class="skill-category-card">
+            <div class="skill-category-title"><span>🌪️</span><span>CFD & Simulation</span></div>
+            <div class="skill-badges-wrap">
+              <span class="skill-badge">ANSYS Fluent</span>
+              <span class="skill-badge">ANSYS CFX</span>
+              <span class="skill-badge">OpenFOAM</span>
+              <span class="skill-badge">Abaqus FEA</span>
+              <span class="skill-badge">ICEM CFD</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-title"><span>📐</span><span>Mechanical Design & CAD</span></div>
+            <div class="skill-badges-wrap">
+              <span class="skill-badge">SolidWorks (CSWP)</span>
+              <span class="skill-badge">AutoCAD</span>
+              <span class="skill-badge">Fusion 360</span>
+              <span class="skill-badge">UltiMaker Cura</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-title"><span>📊</span><span>Optimization & Modeling</span></div>
+            <div class="skill-badges-wrap">
+              <span class="skill-badge">ModeFrontier</span>
+              <span class="skill-badge">Minitab</span>
+              <span class="skill-badge">Surrogate Modeling</span>
+              <span class="skill-badge">Response Surface (RSM)</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-title"><span>💻</span><span>Programming & Computation</span></div>
+            <div class="skill-badges-wrap">
+              <span class="skill-badge">Python</span>
+              <span class="skill-badge">MATLAB</span>
+              <span class="skill-badge">C++</span>
+              <span class="skill-badge">LaTeX</span>
+              <span class="skill-badge">Git / GitHub</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-title"><span>🖨️</span><span>Additive Manufacturing</span></div>
+            <div class="skill-badges-wrap">
+              <span class="skill-badge">FDM 3D Printing</span>
+              <span class="skill-badge">SLA Resin Printing</span>
+              <span class="skill-badge">PLA / PET</span>
+              <span class="skill-badge">Rapid Prototyping</span>
+            </div>
+          </div>
+
+          <div class="skill-category-card">
+            <div class="skill-category-title"><span>🗣️</span><span>Languages</span></div>
+            <div class="skill-badges-wrap">
+              <span class="skill-badge">English (IELTS 7.0: L7.5, R7.5, W6.5, S6.0)</span>
+              <span class="skill-badge">Bengali (Native)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Awards & Honors -->
+      <section class="content-section" id="awards">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">🏆 Awards & Certifications</h2>
+          <a href="pages/others.html" class="section-action-link">
+            <span>View All Certifications →</span>
+          </a>
+        </div>
+
+        <ul style="padding-left: 1.25rem; color: var(--text-secondary);">
+          <li style="margin-bottom: 0.6rem;"><strong>1st Place — Best Research Publication Award (2025):</strong> Faculty of Mechanical Engineering, RUET.</li>
+          <li style="margin-bottom: 0.6rem;"><strong>1st Place — Best Research Publication Award (2025):</strong> Department of Mechanical Engineering, RUET.</li>
+          <li style="margin-bottom: 0.6rem;"><strong>Certified SOLIDWORKS Professional (CSWP) & Associate (CSWA):</strong> Mechanical Design, Additive Manufacturing.</li>
+          <li style="margin-bottom: 0.6rem;"><strong>2nd Place — Techmayhem CAD Design Competition (2023):</strong> RUET.</li>
+          <li style="margin-bottom: 0.6rem;"><strong>11th Place Globally (2023):</strong> International Rover Design Challenge (IRDC), Mars Society South Asia.</li>
+          <li style="margin-bottom: 0.6rem;"><strong>Merit-Based Scholarships (2021–2023):</strong> Rajshahi University of Engineering & Technology.</li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="content-section" id="contact">
+        <div class="section-title-wrapper">
+          <h2 class="section-title">📬 Contact & Office Information</h2>
+        </div>
+
+        <p>I welcome academic discussions, prospective research collaborations, and inquiries:</p>
+
+        <div style="background: var(--bg-surface-alt); border-radius: var(--radius-sm); padding: 1.25rem; border: 1px solid var(--border-subtle); margin-top: 1rem;">
+          <p style="font-size: 1.1rem; font-weight: 700; color: #ffffff; margin-bottom: 0.2rem;">Abu Kaisar Md Faisal</p>
+          <p style="color: var(--primary-accent); font-weight: 600; margin-bottom: 0.4rem;">Lecturer, Department of Mechanical Engineering</p>
+          <p style="color: var(--text-secondary); margin-bottom: 0.2rem;">Khwaja Yunus Ali University (KYAU)</p>
+          <p style="color: var(--text-secondary); margin-bottom: 0.8rem;">Enayetpur, Sirajganj, Bangladesh</p>
+          
+          <div style="display: flex; flex-direction: column; gap: 0.55rem; font-size: 0.95rem;">
+            <p>
+              <span>💼 <strong>Work Email:</strong> </span>
+              <a href="mailto:kaisar.mte@kyau.edu.bd" style="font-weight: 600;">kaisar.mte@kyau.edu.bd</a>
+            </p>
+            <p>
+              <span>✉️ <strong>Personal Email:</strong> </span>
+              <a href="mailto:kaisar.me.ruet@gmail.com" style="font-weight: 600;">kaisar.me.ruet@gmail.com</a>
+            </p>
+            <p>
+              <span>👥 <strong>Microsoft Teams Meeting:</strong> </span>
+              <a href="mailto:kaisar.me.ruet@outlook.com" style="font-weight: 600;">kaisar.me.ruet@outlook.com</a>
+            </p>
+            <p>
+              <span>📞 <strong>Phone:</strong> </span>
+              <a href="tel:+8801718720639" style="font-weight: 600;">+880 1718-720639</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Floating Section Rail (Apple-Style Minimal Right-Edge Navigation) -->
+  <nav class="floating-nav-rail" id="floatingNavRail" aria-label="Page Sections Navigation">
+    <a href="#heroSection" class="nav-dot active" data-title="About & Bio" aria-label="About & Bio"></a>
+    <a href="#career" class="nav-dot" data-title="Career Summary" aria-label="Career Summary"></a>
+    <a href="#news" class="nav-dot" data-title="News & Updates" aria-label="News & Updates"></a>
+    <a href="#interests" class="nav-dot" data-title="Research Themes" aria-label="Research Themes"></a>
+    <a href="#publications" class="nav-dot" data-title="Publications" aria-label="Featured Publications"></a>
+    <a href="#certifications" class="nav-dot" data-title="Certifications" aria-label="Professional Certifications"></a>
+    <a href="#experiences" class="nav-dot" data-title="Experience" aria-label="Academic Experience"></a>
+    <a href="#education" class="nav-dot" data-title="Education" aria-label="Academic Education"></a>
+    <a href="#skills" class="nav-dot" data-title="Technical Skills" aria-label="Technical Skills Matrix"></a>
+    <a href="#awards" class="nav-dot" data-title="Awards & Honors" aria-label="Awards & Certifications"></a>
+    <a href="#contact" class="nav-dot" data-title="Contact" aria-label="Contact Information"></a>
+  </nav>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-text">
+        <p><strong>Abu Kaisar Md Faisal</strong> — Mechanical Engineer, Lecturer & Aerodynamics Researcher</p>
+        <p>&copy; 2026 Abu Kaisar Md Faisal. Hosted on GitHub Pages.</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/publications.html">Publications</a></li>
+        <li><a href="pages/education.html">Education</a></li>
+        <li><a href="pages/experience.html">Experience</a></li>
+        <li><a href="pages/others.html">Others</a></li>
+      </ul>
+      <button class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+        ↑ Top
+      </button>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
