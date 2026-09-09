@@ -48,6 +48,7 @@
   /* Typography */
   --font-sans: 'Instrument Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-serif: 'Newsreader', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
 
   /* Shadows */
   --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.35);
@@ -1830,6 +1831,36 @@ body.blueprint-focus-mode .hud-focus-btn {
 /* --------------------------------------------------------------------------
    9. Responsive Breakpoints
    -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .pub-inspector-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .pub-inspector-sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    z-index: 1100;
+    max-width: 100%;
+    transform: translateY(105%);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .pub-inspector-sidebar.mobile-active {
+    transform: translateY(0);
+  }
+
+  .inspector-card {
+    border-radius: 16px 16px 0 0;
+    border-bottom: none;
+    max-height: 75vh;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7);
+  }
+}
+
 @media (max-width: 992px) {
   .floating-nav-rail {
     display: none !important;

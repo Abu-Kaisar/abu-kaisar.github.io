@@ -66,23 +66,42 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     function preloadRemainingFrames() {
-      // Step 1: Preload every 5th frame for fast responsiveness
+      // Step 1: Preload keyframes (every 5th frame) for immediate scrub coverage
       for (let i = 5; i <= totalFrames; i += 5) {
         const img = new Image();
         img.src = framePath(i);
         images[i] = img;
       }
 
-      // Step 2: Fill in all intermediate frames smoothly
-      setTimeout(() => {
-        for (let i = 2; i <= totalFrames; i++) {
+      // If user enabled Data Saver, preserve bandwidth with keyframe scrubbing
+      if (navigator.connection && navigator.connection.saveData) {
+        return;
+      }
+
+      // Step 2: Progressive chunked batching in browser idle periods to prevent network saturation
+      let currentBatchStart = 2;
+      const batchSize = 12;
+
+      function loadNextBatch() {
+        const end = Math.min(totalFrames, currentBatchStart + batchSize);
+        for (let i = currentBatchStart; i <= end; i++) {
           if (!images[i]) {
             const img = new Image();
             img.src = framePath(i);
             images[i] = img;
           }
         }
-      }, 100);
+        currentBatchStart = end + 1;
+        if (currentBatchStart <= totalFrames) {
+          if ('requestIdleCallback' in window) {
+            window.requestIdleCallback(loadNextBatch, { timeout: 800 });
+          } else {
+            setTimeout(loadNextBatch, 80);
+          }
+        }
+      }
+
+      setTimeout(loadNextBatch, 250);
     }
 
     // Smooth Scroll scrubbing loop with requestAnimationFrame
